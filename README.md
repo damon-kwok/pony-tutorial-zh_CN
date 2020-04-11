@@ -3,12 +3,12 @@
 
 <!-- Hi there! This is the source for the Pony tutorial. -->
 <!-- 这是一份Ponyb语言的教学指南。 -->
-Pony[官方教程](https://github.com/ponylang/pony-tutorial)的中文翻译。
+Pony编程语言[官方教程](https://github.com/ponylang/pony-tutorial)的中文翻译。
 [在线阅读](https://damon-kwok.github.io/pony-tutorial/)
 
 | 章节                               | 进度   |
 | ------                             | ------ |
-| 入门（Getting Started）            | 5%     |
+| 入门（Getting Started）            | 60%     |
 | 类型系统（Types）                  | 90%    |
 | 表达式（Expressions）              | 5%     |
 | 引用权能（Reference Capabilities） | 5%     |
