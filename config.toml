@@ -1,0 +1,90 @@
+baseURL = "https://tutorial.ponylang.io/"
+languageCode = "zh-cn"
+title = "Pony 教程"
+theme = "pony-doc-site"
+canonifyurls = false
+preserveTaxonomyNames = true
+enableGitInfo = true
+uglyURLs = true
+
+[params]
+  github = "https://www.github.com/ponylang/ponyc"
+  twitter = "https://www.twitter.com/ponylang"
+
+[related]
+  threshold = 80
+  includeNewer = true
+  toLower = false
+
+[[related.indices]]
+  name = "tags"
+  weight = 100
+
+[outputs]
+  home = ["HTML", "JSON"]
+  page = ["HTML"]
+
+[[menu.toc]]
+  name = "入门（Getting Started）"
+  weight = 10
+  identifier = "getting-started"
+
+[[menu.toc]]
+  name = "类型系统（Types）"
+  weight = 20
+  identifier = "types"
+
+[[menu.toc]]
+  name = "表达式（Expressions）"
+  weight = 30
+  identifier = "expressions"
+
+[[menu.toc]]
+  name = "引用权能（Reference Capabilities）"
+  weight = 40
+  identifier = "reference-capabilities"
+
+[[menu.toc]]
+  name = "对象权能（Object Capabilities）"
+  weight = 45
+  identifier = "object-capabilities"
+
+[[menu.toc]]
+  name = "泛型（Generics）"
+  weight = 50
+  identifier = "generics"
+
+[[menu.toc]]
+  name = "模式匹配（Pattern Matching）"
+  weight = 50
+  identifier = "pattern-matching"
+
+[[menu.toc]]
+  name = "包（Packages）"
+  weight = 60
+  identifier = "packages"
+
+[[menu.toc]]
+  name = "测试（Testing）"
+  weight = 70
+  identifier = "testing"
+
+[[menu.toc]]
+  name = "C FFI"
+  weight = 80
+  identifier = "c-ffi"
+
+[[menu.toc]]
+  name = "陷阱（Gotchas）"
+  weight = 90
+  identifier = "gotchas"
+
+[[menu.toc]]
+  name = "下一步？（Where Next?）"
+  weight = 100
+  identifier = "where-next"
+
+[[menu.toc]]
+  name = "附录（Appendices）"
+  weight = 110
+  identifier = "appendices"

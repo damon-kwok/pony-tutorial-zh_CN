@@ -1,0 +1,17 @@
+{{- $.Scratch.Add "index" slice -}}
+{{- range where .Site.Pages "Type" "not in" (slice "page" "json") -}}
+    {{- $.Scratch.SetInMap "page" "uri" .Permalink -}}
+    {{- $.Scratch.SetInMap "page" "title" .Title -}}
+    {{- $.Scratch.SetInMap "page" "content" (htmlUnescape .Plain) -}}
+    {{- with .Params.tags -}}
+        {{- $.Scratch.SetInMap "page" "tags" . -}}
+    {{- end -}}
+    {{- if (isset .Params "summary") -}}
+        {{- $.Scratch.SetInMap "page" "summary" (htmlUnescape .Params.summary) -}}
+    {{- else -}}
+        {{- $.Scratch.SetInMap "page" "summary" (htmlUnescape .Summary) -}}
+    {{- end -}}
+    {{- $.Scratch.Add "index" ($.Scratch.Get "page") -}}
+    {{- $.Scratch.Delete "page" -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}
