@@ -1,6 +1,6 @@
 ---
 title: "Hello World: Your First Pony Program"
-section: "Getting Started"
+section: "入门（Getting Started）"
 menu:
   toc:
     parent: "getting-started"
