@@ -1,5 +1,5 @@
-# baseURL = "https://tutorial.ponylang.io/"
-baseURL = "https://damon-kwok.github.io/pony-tutorial/"
+baseURL = "https://tutorial.ponylang.io/"
+# baseURL = "https://damon-kwok.github.io/pony-tutorial/"
 languageCode = "zh-cn"
 title = "Pony 教程"
 theme = "pony-doc-site"
@@ -9,7 +9,8 @@ enableGitInfo = true
 uglyURLs = true
 
 [params]
-  github = "https://www.github.com/ponylang/ponyc"
+  # github = "https://www.github.com/ponylang/ponyc"
+  github = "https://github.com/damon-kwok/pony-tutorial-zh_CN"
   twitter = "https://www.twitter.com/ponylang"
 
 [related]
