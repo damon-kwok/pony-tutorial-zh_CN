@@ -1,4 +1,5 @@
-baseURL = "https://tutorial.ponylang.io/"
+# baseURL = "https://tutorial.ponylang.io/"
+baseURL = "https://damon-kwok.github.io/pony-tutorial/"
 languageCode = "zh-cn"
 title = "Pony 教程"
 theme = "pony-doc-site"

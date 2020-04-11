@@ -3,7 +3,8 @@
 
 <!-- Hi there! This is the source for the Pony tutorial. -->
 <!-- 这是一份Ponyb语言的教学指南。 -->
-Pony官方教程的中文翻译。
+Pony[官方教程](https://github.com/ponylang/pony-tutorial)的中文翻译。
+[在线阅读](https://damon-kwok.github.io/pony-tutorial/)
 
 | 章节                               | 进度   |
 | ------                             | ------ |
