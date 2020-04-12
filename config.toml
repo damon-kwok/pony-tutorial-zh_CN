@@ -1,5 +1,6 @@
-baseURL = "https://tutorial.ponylang.io/"
-# baseURL = "https://damon-kwok.github.io/pony-tutorial/"
+# baseURL = "https://tutorial.ponylang.io/"
+baseURL = "https://damon-kwok.github.io/pony-tutorial/"
+# baseURL = "http://127.0.0.1:9001/public"
 languageCode = "zh-cn"
 title = "Pony 教程"
 theme = "pony-doc-site"
@@ -47,7 +48,7 @@ uglyURLs = true
   identifier = "reference-capabilities"
 
 [[menu.toc]]
-  name = "对象权能（Object Capabilities）"
+  name = "对象权能模型（Object Capabilities）"
   weight = 45
   identifier = "object-capabilities"
 

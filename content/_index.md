@@ -5,33 +5,33 @@ toc: true
 ---
 
 <!-- Welcome to the Pony tutorial! If you're reading this, chances are you want to learn Pony. That's great, we're going to make that happen. -->
-欢迎来到Pony语言教程！阅读这个教程，说明你对Pony感兴趣。很好，接下来我们就来盘它！
+来到这里，说明你对Pony很感兴趣，不感兴趣也没关系，马上你就会感兴趣。多说无益，现在我们就来盘它！
 
 <!-- This tutorial is aimed at people who have some experience programming already. It doesn't really matter if you know a little Python, or a bit of Ruby, or you are a JavaScript hacker, or Java, or Scala, or C/C++, or Haskell, or OCaml: as long as you've written some code before, you should be fine. -->
-本教程假设读者已经有一定的编程经验。
+本教程假设你已经有了一定的编程经验。
 
 <!-- ## What's Pony, anyway? -->
-## Pony是什么？
+## Pony语言简介
 
 <!-- Pony is an object-oriented, actor-model, capabilities-secure programming language. It's __object-oriented__ because it has classes and objects, like Python, Java, C++, and many other languages. It's __actor-model__ because it has _actors_ (similar to Erlang, Elixir, or Akka). These behave like objects, but they can also execute code _asynchronously_. Actors make Pony awesome. -->
 Pony是一个 __面向对象__ 、内置 __Actor模型__ 、 __强调安全性__ 的编程语言。Pony拥有类似于Python、Java、C++等语言的 __面向对象__ 特性。Pony内置的 __Actor模型__ （类似于Erlang、Elixir和Akka），actor看起来像是对象，但是可以 __异步__ 执行代码。
 
 <!-- When we say Pony is __capabilities-secure__, we mean a few things: -->
-Pony的 __安全性__ ,表现在这几个方面：
+Pony强调的 __安全性__ ,表现在这几个方面：
 
 <!-- * It's type safe. Really type safe. There's a mathematical [proof](https://www.ponylang.io/media/papers/opsla237-clebsch.pdf) and everything. -->
 <!-- * It's memory safe. Ok, this comes with type safe, but it's still interesting. There are no dangling pointers, no buffer overruns, heck, the language doesn't even have the concept of _null_! -->
 <!-- * It's exception safe. There are no runtime exceptions. All exceptions have defined semantics, and they are _always_ handled. -->
 <!-- * It's data-race free. Pony doesn't have locks or atomic operations or anything like that. Instead, the type system ensures _at compile time_ that your concurrent program can never have data races. So you can write highly concurrent code and never get it wrong. -->
 <!-- * It's deadlock free. This one is easy, because Pony has no locks at all! So they definitely don't deadlock, because they don't exist. -->
-* 类型安全。
-* 内存安全。
-* 异常处理安全
-* 无数据竞争。Pony中没有提供锁、原子操作等机制。作为替代，
-* 无死锁。Pony没有提供任何加锁的机制，读写锁、临界区统统不存在，你压根儿用不到，也没有机会用，因此死锁不可能发生！
+* 类型安全性。
+* 内存安全性。
+* 异常处理安全性。
+* 无数据竞争。Pony中没有提供锁、原子操作等机制。编译器会在 __编译期__ 检测出潜在的数据竞争问题。
+* 无死锁。再说一次：Pony没有锁！临界区、读写锁、自旋锁、统统不存在！
 
 <!-- We'll talk more about capabilities-security, including both __object capabilities__ and __reference capabilities__ later. -->
-后面的章节我们还会讨论更多安全性相关问题，包括 __对象__ 和 __引用__ 。
+后面的章节我们还会讨论更多安全性相关问题，包括 __对象权能模型__ 和 __引用权能__ 。
 
 ## The Pony Philosophy: Get Stuff Done
 
