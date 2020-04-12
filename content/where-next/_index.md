@@ -1,6 +1,6 @@
 ---
 title: "概述（Overview）"
-section: "下一步？（Where Next?）"
+section: "进阶阅读（Where Next?）"
 layout: overview
 menu:
   toc:
@@ -26,15 +26,17 @@ We don't have an automatic blog aggregator but wish we did. In the meantime, we 
 
 ## Pony Patterns
 
-One of the hardest parts of learning a new language is figuring out how to do various different "everyday" tasks. We have a cookbook style book called "Pony Patterns" that enumerates a variety of problems you might encounter and idiomatic ways to solve those problems. The amount of content is still somewhat small but growing all the time.
+<!-- One of the hardest parts of learning a new language is figuring out how to do various different "everyday" tasks. We have a cookbook style book called "Pony Patterns" that enumerates a variety of problems you might encounter and idiomatic ways to solve those problems. The amount of content is still somewhat small but growing all the time. -->
 
 [Pony Patterns](http://patterns.ponylang.io)
 
-## Standard Library Documentation
+<!-- ## Standard Library Documentation -->
+## 标准库文档
 
-You are going to need to learn the standard library. Some of us prefer to open the source code and explore. If you prefer an online experience, we maintain a version of the standard library documentation online. And you don't have to worry about it going out of date as it is updated on every commit to the ponyc master branch.
+<!-- You are going to need to learn the standard library. Some of us prefer to open the source code and explore. If you prefer an online experience, we maintain a version of the standard library documentation online. And you don't have to worry about it going out of date as it is updated on every commit to the ponyc master branch. -->
 
-[Standard Library Documentation](https://stdlib.ponylang.io/)
+<!-- [Standard Library Documentation](https://stdlib.ponylang.io/) -->
+[标准库文档](https://stdlib.ponylang.io/)
 
 ## Ponylang Zulip
 
