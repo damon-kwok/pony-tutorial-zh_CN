@@ -8,21 +8,27 @@ menu:
 toc: true
 ---
 
-Like other object-oriented languages, Pony has __subtyping__. That is, some types serve as _categories_ that other types can be members of.
+<!-- Like other object-oriented languages, Pony has __subtyping__. That is, some types serve as _categories_ that other types can be members of. -->
+与其他面向对象的语言一样，Pony具有 __多态性（subtyping）__ 。也就是说，某些类型充当 _categories_ ，其他类型可以成为其成员。
 
-There are two kinds of __subtyping__ in programming languages: __nominal__ and __structural__. They're subtly different, and most programming languages only have one or the other. Pony has both!
+<!-- There are two kinds of __subtyping__ in programming languages: __nominal__ and __structural__. They're subtly different, and most programming languages only have one or the other. Pony has both! -->
+编程语言的实现上有两种 __多态（subtyping）__ 类型： __声明式（nominal）多态__ 和 __结构化（structural）多态__ 。它们有细微的不同，大多数编程语言只会选择一种实现。但是Pony两种都实现了！
 
-## Nominal subtyping
+
+<!-- ## Nominal subtyping -->
+## 声明式多态（Nominal subtyping）
 
 This kind of subtyping is called __nominal__ because it is all about __names__.
 
-If you've done object-oriented programming before, you may have seen a lot of discussion about _single inheritance_, _multiple inheritance_, _mixins_, _traits_, and similar concepts. These are all examples of __nominal subtyping__.
+<!-- If you've done object-oriented programming before, you may have seen a lot of discussion about _single inheritance_, _multiple inheritance_, _mixins_, _traits_, and similar concepts. These are all examples of __nominal subtyping__. -->
+如果你有过面向对象编程经验，你应该熟悉 _继承（单）_ 、 _多重继承_ 、 _组合_ 、 _特征_ 或类似的概念，所有的这些都属于 __声明式多态__
 
 The core idea is that you have a type that declares it has a relationship to some category type. In Java, for example, a __class__ (a concrete type) can __implement__ an __interface__ (a category type). In Java, this means the class is now in the category that the interface represents. The compiler will check that the class actually provides everything it needs to.
 
-## Traits: nominal subtyping
+<!-- ## Traits: nominal subtyping -->
+## Pony的特征（Traits）：声明式多态（Nominal subtyping）
 
-Pony has nominal subtyping, using __traits__. A __trait__ looks a bit like a __class__, but it uses the keyword `trait` and it can't have any fields.
+<!-- Pony has nominal subtyping, using __traits__. A __trait__ looks a bit like a __class__, but it uses the keyword `trait` and it can't have any fields. -->
 
 ```pony
 trait Named
@@ -69,15 +75,19 @@ Here, we have a class `Larry` that has a `name` function with the same signature
 
 __Wait, why not?__ Because `Larry` doesn't say it `is Named`. Remember, traits are __nominal__: a type that wants to provide a trait has to explicitly declare that it does. And `Larry` doesn't.
 
-## Structural subtyping
+<!-- ## Structural subtyping -->
+## 结构化多态（Structural subtyping）
 
 There's another kind of subtyping, where the name doesn't matter. It's called __structural subtyping__, which means that it's all about how a type is built, and nothing to do with names.
+这是多态的另一种实现，无需声明也不关心命名。
 
 A concrete type is a member of a structural category if it happens to have all the needed elements, no matter what it happens to be called.
 
-If you've used Go, you'll recognise that Go interfaces are structural types.
+<!-- If you've used Go, you'll recognise that Go interfaces are structural types. -->
+如果你用过Go语言，你会自然而然的想到Go的`interface`就是结构化多态的实现。
 
-## Interfaces: structural subtyping
+<!-- ## Interfaces: structural subtyping -->
+## Pony的接口（Interfaces）: 结构化多态（structural subtyping）
 
 Pony has structural subtyping too, using __interfaces__. Interfaces look like traits, but they use the keyword `interface`.
 

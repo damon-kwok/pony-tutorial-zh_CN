@@ -18,7 +18,8 @@ class Wombat
 <!-- __Do all types start with a capital letter?__ Yes! And nothing else starts with a capital letter. So when you see a name in Pony code, you will instantly know whether it's a type or not. -->
 __所有的类型都必须以大写字母开头吗？__ 没错！当你阅读Pony代码时，你可以通过命名轻松判断是否是一个类型。
 
-## What goes in a class?
+<!-- ## What goes in a class? -->
+## 类的组成部分
 
 <!-- A class is composed of: -->
 一个类的组成：
@@ -28,7 +29,7 @@ __所有的类型都必须以大写字母开头吗？__ 没错！当你阅读Pon
 <!-- 2. Constructors. -->
 2. 构造函数
 <!-- 3. Functions. -->
-3. 函数
+3. 成员函数
 
 <!-- ### Fields -->
 ### 字段
@@ -46,7 +47,7 @@ class Wombat
 上面例子中，类`Wombat`有一个`String`类型的`name`字段，和一个`U64`（64位无符号长整形）类型的`_hunger_level`字段。
 
 <!-- __What does the leading underscore mean?__ It means something is __private__. A __private__ field can only be accessed by code in the same type. A __private__ constructor, function, or behaviour can only be accessed by code in the same package. We'll talk more about packages later. -->
-__下划线开头是啥意思？__ 它表示 __私有__ ，一个 __私有__ 字段只能在类内部使用，外部无法访问。下划线同样可以作用于 __构造函数__ ， __函数__ 和 __行为__ ，标识只能在 __包__ 内部访问。稍后会讲解到 __包__ 的概念。
+__下划线开头是啥意思？__ 它表示 __私有__ ，一个 __私有__ 字段只能在类内部使用，外部无法访问。下划线同样可以作用于 __构造函数__ ， __成员函数__ 和 __行为__ ，标识只能在 __包__ 内部访问。稍后会讲解到 __包__ 的概念。
 
 <!-- ### Constructors -->
 ### 构造函数
@@ -133,10 +134,10 @@ class Forest
 稍后我们会在[语法糖](/expressions/sugar.html)章节中做出详细解释。
 
 <!-- ### Functions -->
-### 函数
+### 成员函数
 
 <!-- Functions in Pony are like methods in Java, C#, C++, Ruby, Python, or pretty much any other object oriented language. They are introduced with the keyword `fun`. They can have parameters like constructors do, and they can also have a result type (if no result type is given, it defaults to `None`). -->
-Pony中的函数类似于Java，C#，C++，Ruby，Python等面向对象语言中的方法（类成员函数）。和构造函数一样它们也可以有参数和返回值类型（注意是_可以有_，不是必须。如果没有明确给出返回值类型，默认为`None`，表示没有返回值）。
+Pony中的成员函数类似于Java，C#，C++，Ruby，Python等面向对象语言中的方法（类成员函数）。和构造函数一样它们也可以有参数和返回值类型（注意是_可以有_，不是必须。如果没有明确给出返回值类型，默认为`None`，表示没有返回值）。
 
 ```pony
 class Wombat
@@ -158,10 +159,10 @@ class Wombat
 ```
 
 <!-- The first function, `hunger`, is pretty straight forward. It has a result type of `U64`, and it returns `_hunger_level`, which is a `U64`. The only thing a bit different here is that no `return` keyword is used. This is because the result of a function is the result of the last expression in the function, in this case, the value of `_hunger_level`. -->
-我们从一个简单的`hunger`函数开始讲解，它有一个`U64`返回类型，返回树袋熊当前的口渴等级。这里我们没有使用`return`关键字，因为我们要返回的`_hunger_level`是函数的最后一个表达式。
+我们从`hunger`函数说起：它有一个`U64`返回类型，返回树袋熊当前的口渴等级。这里我们没有使用`return`关键字，因为我们要返回的`_hunger_level`是函数的最后一个表达式。
 
 <!-- __Is there a `return` keyword in Pony?__ Yes. It's used to return "early" from a function, i.e. to return something right away and not keep running until the last expression. -->
-__那么Pony中有`return`关键字吗？__ 是的，当你需要在函数中"提前"返回时，也就是说你不希望函数运行到最后一个表达式的时候，就需要用到`return`关键字。
+__Pony中有`return`关键字吗？__ 当然有，当你需要在函数中"提前"返回时，也就是说你不希望函数运行到最后一个表达式的时候，就需要用到`return`关键字。
 
 <!-- The second function, `set_hunger`, introduces a _bunch_ of new concepts all at once. Let's go through them one by one. -->
 再来看第二个函数`set_hunger`，这里出现了 _一堆_ 新概念，让我们来逐步了解一下这些概念。
