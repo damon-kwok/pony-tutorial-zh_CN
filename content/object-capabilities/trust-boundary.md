@@ -1,6 +1,6 @@
 ---
 title: "Trust Boundary"
-section: "Object Capabilities"
+section: "对象权能模型（Object Capabilities）"
 menu:
   toc:
     parent: "object-capabilities"

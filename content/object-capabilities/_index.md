@@ -1,6 +1,6 @@
 ---
 title: "概述（Overview）"
-section: "Object Capabilities"
+section: "对象权能模型（Object Capabilities）"
 layout: overview
 menu:
   toc:

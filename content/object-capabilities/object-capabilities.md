@@ -1,6 +1,6 @@
 ---
-title: "Object Capabilities"
-section: "Object Capabilities"
+title: "对象权能模型（Object Capabilities）"
+section: "对象权能模型（Object Capabilities）"
 menu:
   toc:
     parent: "object-capabilities"
@@ -8,7 +8,8 @@ menu:
 toc: true
 ---
 
-Pony's capabilities-secure type system is based on the object-capability model. That sounds complicated, but really it's elegant and simple. The core idea is this:
+<!-- Pony's capabilities-secure type system is based on the object-capability model. That sounds complicated, but really it's elegant and simple. The core idea is this: -->
+Pony的类型安装系统是构建在[对象权能模型](https://everything.explained.today/Object-capability_model/)的理论基础上的。感觉上很复杂，但是其实非常简单优雅，这是`对象权能模型`的核心概念：
 
 > A capability is an unforgeable token that (a) designates an object and (b) gives the program the authority to perform a specific set of actions on that object.
 
@@ -34,7 +35,8 @@ Instead of having permissions lists, access control lists, or other forms of sec
 
 There's a great paper on how the object-capability model works, and it's pretty easy reading:
 
-[Capability Myths Demolished](http://srl.cs.jhu.edu/pubs/SRL2003-02.pdf)
+<!-- [Capability Myths Demolished](http://srl.cs.jhu.edu/pubs/SRL2003-02.pdf) -->
+[权能梦碎——对象权能模型跌落神坛](http://srl.cs.jhu.edu/pubs/SRL2003-02.pdf)
 
 ## Capabilities and concurrency
 
