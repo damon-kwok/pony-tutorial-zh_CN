@@ -14,19 +14,19 @@ __actor__ 和 __类__ 的关键区别：actor可以有 __行为__ 。
 ## Behaviours 行为
 
 <!-- A __behaviour__ is like a __function__, except that functions are _synchronous_ and behaviours are _asynchronous_. In other words, when you call a function, the body of the function is executed immediately, and the result of the call is the result of the body of the function. This is just like method invocation in any other object-oriented language. -->
-__行为__ 类似于 __函数__，不过函数是 _同步执行_ 的，但是行为是 _异步执行_ 的。换句话说，当您调用一个函数时，该函数将立即执行，并且立即就可以得到函数的返回值。函数就像其他面向对象语言中的方法调用一样。
+__行为__ 和 __函数__ 的区别：函数是 _同步执行_ 的，行为是 _异步执行_ 的。当您调用一个函数时，该函数将立即执行，并且立即就可以得到返回值。函数就像其他面向对象语言中的方法调用一样。
 
 <!-- But when you call a behaviour, the body is __not__ executed immediately. Instead, the body of the behaviour will execute at some indeterminate time in the future. -->
-但是调用行为， __不会__ 立即执行。相反，该行为的将在将来某个不确定的时间执行。
+行为被调用后 __不会__ 立即执行。相反，该行为的将在未来的某个时间执行。
 
 <!-- A behaviour looks like a function, but instead of being introduced with the keyword `fun`, it is introduced with the keyword `be`. -->
-行为看起来像一个函数，但是它不是由关键字`fun`定义的，而是使用`be`关键字。
+行为看起来很像一个函数，但它不是用关键字`fun`定义的，而是用`be`关键字。
 
 <!-- Like a function, a behaviour can have parameters. Unlike a function, it doesn't have a receiver capability (a behaviour can be called on a receiver of any capability) and you can't specify a return type. -->
-和函数一样，行为也可以具有参数。与函数不同，它没有接收器功能（可以在任何功能的接收器上调用行为），您不能为行为指定返回类型。
+和函数一样，行为也可以具有参数。与函数不同，它没有接收器功能（可以在任何权能接收器上调用行为），但不能为行为指定返回类型。
 
 <!-- __So what does a behaviour return?__ Behaviours always return `None`, like a function without explicit result type, because they can't return something they calculate (since they haven't run yet). -->
-__那么行为会返回什么呢？__ 行为总是返回`None`，就像没有显式的返回类型的函数一样，它们无法返回所计算的内容（因为调用时它们尚未运行）。
+__那么行为会返回什么呢？__ 行为总是返回`None`（None基元类的实例），就像没有显式的返回类型的函数一样，它们无法返回所计算的内容（因为调用时它们尚未运行）。
 
 ```pony
 actor Aardvark
@@ -41,13 +41,13 @@ actor Aardvark
 ```
 
 <!-- Here we have an `Aardvark` that can eat asynchronously. Clever Aardvark. -->
-在这里，我们定义了一个可以异步进餐的`土拨鼠`。
+在这个例子里，我们定义了一个可以异步进餐的`土拨鼠`。
 
 <!-- ## Message Passing  -->
 ## 消息处理
 
 <!-- If you are familiar with actor-based languages like Erlang, you are familiar with the concept of "message passing". It's how actors communicate with one another. Behaviours are the Pony equivalent. When you call a behavior on an actor, you are sending it a message. -->
-如果您熟悉基于actor的语言（例如Erlang），那么你对"消息传递"的概念一定很熟悉了。actor之间就是这样交流的。Pony中的行为等价于Erlang中的消息。当您调用actor的行为时，相当于在向其发送消息。
+如果您熟悉基于actor模型的语言（例如Erlang），那么你对"消息传递"的概念一定很熟悉了。actor之间就是这样交流的。Pony中的行为等价于Erlang中的消息。当您调用actor的行为时，相当于在向其发送消息。
 
 <!-- If you aren't familiar with message passing, don't worry about it. We've got you covered. All will be explained below. -->
 如果您不熟悉消息传递，也不必担心。所有内容将在下面说明。
@@ -87,7 +87,7 @@ actor Main
 ## 为什么这些代码时安全的？
 
 <!-- Because of Pony's __capabilities secure type system__. We've mentioned reference capabilities briefly before when talking about function receiver reference capabilities. The short version is that they are annotations on a type that make all this parallelism safe without any runtime overhead. -->
-Pony拥有 __权能安全的类型系统__ 。在谈论函数接收器`引用权能`的时候，我们已经简要的介绍了`引用权能`。简单的说是它们是对类型的注释，这些注释使得Pony在处理并行问题上没有任何运行时开销。
+得益于Pony的 __权能安全的类型系统__ 。之前在讨论函数接收器`引用权能`的时候，我们已经简单的介绍了`引用权能`。它们是对类型的注释，这些注释使得Pony在处理并行问题上没有任何运行时开销。
 
 <!-- We will cover reference capabilities in depth later. -->
 稍后我们将深入介绍`引用权能`。
@@ -102,9 +102,9 @@ Pony拥有 __权能安全的类型系统__ 。在谈论函数接收器`引用权
 但是actor的开销可以忽略不计。与类对象相比，actor的额外开销大约为256个字节的内存。注意是字节，而不是千字节！而且没有锁，也没有上下文切换。除了少数几个额外的内存字节外，没有执行的actor不会消耗资源。
 
 <!-- It's pretty normal to write a Pony program that uses hundreds of thousands of actors. -->
-编写一个使用成千上万actor的Pony程序是再正常不过的事。
+一个程序中使用成千上万的actor对Pony来说是再正常不过的事。
 
 ## Actor finalisers
 
 <!-- Like classes, actors can have finalisers. The finaliser definition is the same (`fun _final()`). All guarantees and restrictions for a class finaliser are also valid for an actor finaliser. In addition, an actor will not receive any further message after its finaliser is called. -->
-和类一样，actor也有销毁函数。销毁函数的定义也是（`fun _final（）`）。类的销毁函数的所有保证和限制也对actor有效。另外，actor的销毁函数被调用后，它将不能再收到任何其他消息。
+和类一样，actor也有销毁函数。销毁函数的定义也是（`fun _final（）`）。类的销毁函数的所有保证和限制也对actor有效。另外，actor的销毁函数被调用后，就不会再收到任何消息。

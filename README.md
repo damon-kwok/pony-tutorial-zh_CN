@@ -9,7 +9,7 @@ Pony编程语言[官方教程](https://github.com/ponylang/pony-tutorial)的中�
 | 章节                               | 进度   |
 | ------                             | ------ |
 | 入门（Getting Started）            | 100%     |
-| 类型系统（Types）                  | 90%    |
+| 类型系统（Types）                  | 99%    |
 | 表达式（Expressions）              | 5%     |
 | 引用权能（Reference Capabilities） | 5%     |
 | 对象权能（Object Capabilities）    | 5%     |

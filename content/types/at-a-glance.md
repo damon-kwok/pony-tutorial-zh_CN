@@ -59,7 +59,8 @@ Pony类型的系统提供了很多保证，甚至比其他静态类型的语言�
 * 无数据竞争。
 * 不会出现死锁。
 * 代码权能安全性。
-* 所有消息传递为 [causal](https://courses.cs.vt.edu/~cs5204/fall00/causal.html) （不可以！）
+* [causal](https://courses.cs.vt.edu/~cs5204/fall00/causal.html). (Not ca**su**al!)
+<!-- * 所有消息传递为 [causal](https://courses.cs.vt.edu/~cs5204/fall00/causal.html) （不可以！） -->
 
 <!-- Some of those will make sense right now. Some of them may not mean much to you yet (like capabilities-security and causal messaging), but we'll get to those concepts later on. -->
 上述的概念中有一些你现在可以理解。还有一些不能理解的概念暂时可以无需关心（例如权能安全性和因果消息传递），但稍后我们将介绍这些概念。
