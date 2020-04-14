@@ -26,7 +26,7 @@ Then, create a file in that directory called `main.pony`.
 然后用你的文本编辑器在这个目录中新建一个文件：`main.pony`。
 
 <!-- __Does the name of the file matter?__ Not to the compiler, no. Pony doesn't care about filenames other than that they end in `.pony`. But it might matter to you! By giving files good names, it can be easier to find the code you're looking for later. -->
-__文件名重要吗？__对编译器来说不重要。 Pony只关心源文件的扩展名`.pony`，不关心文件名。但文件名对你来说很重要！给源文件起个好名字，可以方便以后定位代码。
+__文件名重要吗？__ 对编译器来说不重要。 Pony只关心源文件的扩展名`.pony`，不关心文件名。但文件名对你来说很重要！给源文件起个好名字，可以方便以后定位代码。
 
 <!-- In your file, put the following code: -->
 在文件中输入下面的代码：
