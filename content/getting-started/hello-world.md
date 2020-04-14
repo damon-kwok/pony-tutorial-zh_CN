@@ -22,7 +22,7 @@ __目录名称重要吗？__ 是的。这将是你的程序最终输的名！默
 <!-- ## The code -->
 ## 代码
 
-Then, create a file in that directory called `main.pony`.
+<!-- Then, create a file in that directory called `main.pony`. -->
 然后用你的文本编辑器在这个目录中新建一个文件：`main.pony`。
 
 <!-- __Does the name of the file matter?__ Not to the compiler, no. Pony doesn't care about filenames other than that they end in `.pony`. But it might matter to you! By giving files good names, it can be easier to find the code you're looking for later. -->
@@ -58,7 +58,7 @@ Linking ./helloworld
 ```bash
 $ docker run -v Some_Absolute_Path/helloworld:/src/main ponylang/ponyc 
 ```
-注意，需要将helloworld目录的路径换成你自己的。
+注意，需要将目录路径替换成你自己的。
 
 <!-- Look at that! It built the current directory, `.`, plus the stuff that is built into Pony, `builtin`, it generated some code, optimised it, created an object file (don't worry if you don't know what that is), and linked it into an executable with whatever libraries were needed. If you're a C/C++ programmer, that will all make sense to you, otherwise, it probably won't, but that's ok, you can ignore it. -->
 你会发现，它在当前目录进行了构建，`.`，Pony对代码进行了优化，并创建了一些目标文件（如果您不知道那是什么，不用担心） ，然后将其链接到了一个可执行文件中。如果您是C/C++程序员，那对你来说可能是有意义的，否则你可以忽略它。
