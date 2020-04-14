@@ -54,7 +54,11 @@ Linking ./helloworld
 ```
 
 <!-- (If you're using Docker, you'd write something like `$ docker run -v Some_Absolute_Path/helloworld:/src/main ponylang/ponyc`, depending of course on what the absolute path to your `helloworld` directory is.) -->
-（如果你想要Docker中使用Pony，可以这么做：`$ docker run -v Some_Absolute_Path/helloworld:/src/main ponylang/ponyc`，需要将helloworld目录的路径换成自己的。）
+如果你想要Docker中使用Pony，可以这么做：
+```bash
+$ docker run -v Some_Absolute_Path/helloworld:/src/main ponylang/ponyc 
+```
+注意，需要将helloworld目录的路径换成你自己的。
 
 <!-- Look at that! It built the current directory, `.`, plus the stuff that is built into Pony, `builtin`, it generated some code, optimised it, created an object file (don't worry if you don't know what that is), and linked it into an executable with whatever libraries were needed. If you're a C/C++ programmer, that will all make sense to you, otherwise, it probably won't, but that's ok, you can ignore it. -->
 你会发现，它在当前目录进行了构建，`.`，Pony对代码进行了优化，并创建了一些目标文件（如果您不知道那是什么，不用担心） ，然后将其链接到了一个可执行文件中。如果您是C/C++程序员，那对你来说可能是有意义的，否则你可以忽略它。
