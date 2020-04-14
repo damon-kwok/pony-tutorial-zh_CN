@@ -9,7 +9,7 @@ menu:
 toc: true
 ---
 <!-- Now that you've successfully installed the Pony compiler, let's start programming! Our first program will be a very traditional one. We're going to print "Hello, world!". First, create a directory called `helloworld`: -->
-你已经成功的安装了Pony编译器，我们来写点代码吧！我们从输出"hello,world!"开始。首先创建一个目录：`helloworld`：
+你已经成功的安装了Pony编译器，我们来编写自己的第一个Pony程序：输出"hello,world!"。首先，创建一个目录：`helloworld`：
 
 ```bash
 $ mkdir helloworld
@@ -26,10 +26,10 @@ Then, create a file in that directory called `main.pony`.
 然后用你的文本编辑器在这个目录中新建一个文件：`main.pony`。
 
 <!-- __Does the name of the file matter?__ Not to the compiler, no. Pony doesn't care about filenames other than that they end in `.pony`. But it might matter to you! By giving files good names, it can be easier to find the code you're looking for later. -->
-__文件名重要吗？__对编译器来说不重要。 Pony除了以`.pony`结尾的文件名外，不关心文件名。但这可能对你很重要！给源文件起个好名字，以后可以更轻松定位代码。
+__文件名重要吗？__对编译器来说不重要。 Pony只关心源文件的扩展名`.pony`，不关心文件名。但文件名对你来说很重要！给源文件起个好名字，可以方便以后定位代码。
 
 <!-- In your file, put the following code: -->
-文件中敲入下面的代码：
+在文件中输入下面的代码：
 
 ```pony
 actor Main
@@ -60,7 +60,7 @@ Linking ./helloworld
 你会发现，它在当前目录进行了构建，`.`，Pony对代码进行了优化，并创建了一些目标文件（如果您不知道那是什么，不用担心） ，然后将其链接到了一个可执行文件中。如果您是C/C++程序员，那对你来说可能是有意义的，否则你可以忽略它。
 
 <!-- __Wait, it linked too?__ Yes. You won't need a build system (like `make`) for Pony. It handles that for you (including handling the order of dependencies when you link to C libraries, but we'll get to that later). -->
-__等等，Pony也进行链接了吗？__ 是的。Pony不需要额外的构建程序（例如`make`），自己就会处理（包括在链接到C库时处理依赖项的顺序，后面章节会介绍）。
+__构建过程中也进行链接吗？__ 是的。Pony不需要额外的构建程序（例如`make`），自己就会处理（包括在链接到C库时处理依赖项的顺序，后面章节会介绍）。
 
 <!-- ## Running the program -->
 ## 运行程序
