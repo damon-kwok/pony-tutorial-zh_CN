@@ -9,13 +9,13 @@ toc: true
 ---
 
 <!-- Like most other programming languages Pony allows you to store data in variables. There are a few different kinds of variables which have different lifetimes and are used for slightly different purposes. -->
-和大多数编程语言一样，Pony可以数据存储在变量中。不同类型的变量具有不同的生存期，使用场景也有所不同。
+Pony和其他编程语言一样，用变量存储数据。不同类型的变量具有不同的生命周期和使用场景。
 
 <!-- ## Local variables -->
 ## 局部变量
 
 <!-- Local variables in Pony work very much as they do in other languages, allowing you to store temporary values while you perform calculations. Local variables live within a chunk of code (they are _local_ to that chunk) and are created every time that code chunk executes and disposed of when it completes. -->
-Pony中的局部变量与其他语言一样，可以让您在执行计算时存储临时值。局部变量位于代码块中（它们是该代码块的 _local_ ），并在每次进入代码块时自动创建，并在代码块结束时销毁。
+Pony中的局部变量与其他语言类似，可以在执行计算时存储临时值。局部变量位于代码块中（它们是该代码块的 _local_ ），并在每次进入代码块时自动创建，并在代码块结束时销毁。
 
 <!-- To define a local variable the `var` keyword is used (`let` can also be used, but we'll get to that later). Right after the `var` comes the variable's name, and then you can (optionally) put a `:` followed by the variable's type. For example: -->
 定义局部变量，可以使用关键字`var`（也可以使用`let`，但是我们稍后再讲）。在`var`后面紧跟着的时变量的名称，变量名后面加上一个`：`可以设置（可选）变量的类型。例如：
@@ -29,10 +29,10 @@ var y = "Hello"
 上面示例中，创建了一个字符串类型的变量`x`，并赋值为`"Hello"`。
 
 <!-- You don't have to give a value to the variable when you define it: you can assign one later if you prefer. If you try to read the value from a variable before you've assigned one, the compiler will complain instead of allowing the dreaded _uninitialised variable_ bug. -->
-定义变量时不时必须要给变量赋值：如果愿意，可以稍后再赋值。如果在变量赋值之前尝试从变量中读取值，编译器会报一个变量还未初始化的错误： _uninitialized variable_ 。
+定义变量时可以不用给变量赋初始值：可以稍后再赋值。但是如果使用没有赋值的变量，编译器会报一个变量还未初始化的错误： _uninitialized variable_ 。
 
 <!-- Every variable has a type, but you don't have to specify it in the declaration if you provide an initial value. The compiler will automatically use the type of the initial value of the variable. -->
-每个变量都有一个类型，但是如果提供初始值，则不必在声明中指定它。编译器将自动使用变量初始值的类型。
+所有变量要指定类型，但是如果在声明时提供了初始值，就可以省略类型，编译器会根据初始值自动推导出变量的类型。
 
 <!-- The following definitions of `x`, `y` and `z` are all effectively identical. -->
 下面示例中x，y和z定义方式是等价的。
