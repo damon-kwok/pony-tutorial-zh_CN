@@ -196,7 +196,7 @@ __Why would I use `embed`?__ `embed` avoids a pointer indirection when accessing
 ## 隐藏（Shadowing）
 
 <!-- Some programming languages let you declare a variable with the same name as an existing variable, and then there are rules about which one you get. This is called _shadowing_, and it's a source of bugs. If you accidentally shadow a variable in Pony, the compiler will complain. -->
-有些编程语言（类如Rust）允许你声明一个与现有变量同名的变量，替代旧的。这个方式还被美其名曰 _隐藏（shadowing）_ ，这容易引发bug，Pony中不允许这么做。如果你不小心在Pony中隐藏了变量，编译时会报错。
+有些编程语言（类如[Rust](https://www.rust-lang.org/zh-CN/)、[Reason](https://reasonml.github.io/zh-CN/)）允许你声明一个与现有变量同名的变量，替代旧的。这个方式还被美其名曰 _隐藏（shadowing）_ ，这容易引发bug，Pony中不允许这么做。如果你不小心在Pony中隐藏了变量，编译时会报错。
 
 <!-- If you need a variable with _nearly_ the same name, you can use a prime `'`. -->
 如果您需要一个 _同名变量_ ，可以用前面提到的方式：使用`'`符号。
