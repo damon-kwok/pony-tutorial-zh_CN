@@ -9,7 +9,7 @@ toc: true
 ---
 
 <!-- Like most other programming languages Pony allows you to store data in variables. There are a few different kinds of variables which have different lifetimes and are used for slightly different purposes. -->
-Pony和其他编程语言一样，用变量存储数据。不同类型的变量具有不同的生命周期和使用场景。
+Pony和其他编程语言一样，可以使用变量存储数据。不同种类的变量有不同的生命周期和使用场景。
 
 <!-- ## Local variables -->
 ## 局部变量
@@ -47,13 +47,13 @@ z = "Hello"
 ```
 
 <!-- __Can I miss out both the type and initial value for a variable?__ No. The compiler will complain that it can't figure out a type for that variable. -->
-__我可以同时省略变量的类型和初始值吗？__ 不行。这样的话编译器无法确定变量的类型。
+__可以同时省略变量的类型和初始值吗？__ 不行。这样的话编译器无法确定变量的类型。
 
 <!-- All local variable names start with a lowercase letter. If you want to you can end them with a _prime_ `'` (or more than one) which is useful when you need a second variable with almost the same meaning as the first. For example, you might have one variable called `time` and another called `time'`. -->
 所有局部变量名称均以小写字母开头。如果需要，可以用一个（或多个）引号`'`结尾，当您规避变量重名问题时，会很有用。例如，有一个名为`time`的变量，另一个变量名可以用`time'`。
 
 <!-- The chunk of code that a variable lives in is known as its __scope__. Exactly what its scope is depends on where it is defined. For example, the scope of a variable defined within the `then` expression of an `if` statement is that `then` expression. We haven't looked at `if` statements yet, but they're very similar to every other language. -->
-变量所在的代码块称为 __作用域（scope）__ 。作用域范围取决于它的定义位置。例如，在`if`语句的`then`表达式中定义的变量的作用域就是该`then`表达式。虽然我们还没有讲到`if`语句，不过它与其他种语言中的用法是相似的。
+变量所在的代码块称为 __作用域（scope）__ 。作用域的范围取决于定义的位置。例如，在`if`语句的`then`表达式中定义的变量的作用域就是该`then`表达式。虽然我们还没有讲到`if`语句，不过它与其他种语言中的用法是相似的。
 
 ```pony
 if a > b then
@@ -81,7 +81,7 @@ y = 6  // Error, y is let
 ```
 
 <!-- Using `let` instead of `var` also means the variable has to be assigned immediately. -->
-使用`let`时必须赋初值。
+使用`let`时必须初始化。
 
 ```pony
 let x: U32 = 3 // Ok
@@ -90,39 +90,39 @@ y = 6 // Error, can't reassign to a let local
 ```
 
 <!-- Note that a variable having been declared with `let` only restricts reassignment, and does not influence the mutability of the object it references. This is the job of reference capabilities, explained later in this tutorial. -->
-注意，用`let`声明的变量只有自身的重新赋值受到限制，并且不影响其引用的对象的可变性。这是`引用权能`中的内容，本教程后面的章节将对此进行说明。
+注意，使用`let`声明的变量只有重新赋值受到限制，并且不影响其引用的对象的可变性。这是`引用权能`中的内容，本教程后面的章节将对此进行说明。
 
 <!-- You never have to declare variables as `let`, but if you know you're never going to change what a variable references then using `let` is a good way to catch errors. It can also serve as a useful comment, indicating what is referenced is not meant to be changed. -->
-变量不时必须要声明为`let`，但是如果您知道永远不会更改变量引用的内容，那么使用`let`是个好主义。这也时一种有用的类型注释，指示所引用的内容不能更改。
+变量不一定要用`let`声明，但是如果永远不会更改变量引用的内容，使用`let`是个好主义。这也是一种类型注释，指示所引用的内容不能更改。
 
 <!-- ## Fields -->
 ## 字段
 
 <!-- In Pony, fields are variables that live within objects. They work like fields in other object-oriented languages. -->
-在Pony中，字段是存在于对象中的变量。它们像其他面向对象语言中的字段一样工作。
+在Pony中，字段是对象中的变量。跟其他面向对象语言中的字段没有两样。
 
 <!-- Fields have the same lifetime as the object they're in, rather than being scoped. They are set up by the object constructor and disposed of along with the object. -->
-字段与它们所在的对象具有相同的生存期，而不是被限制范围。它们由对象构造函数设置，并与对象一起处理。
+字段与它所在的对象具有相同的生命周期，而不是被限制范围。它们在对象的构造函数内初始化，并与对象一起销毁。
 
 <!-- If the name of a field starts with `_`, it's __private__. That means only the type the field is in can have code that reads or writes that field. Otherwise, the field is __public__ and can be read or written from anywhere. -->
-如果字段名称以“ _”开头，则为__private__。这意味着只有该字段所在的类型才能具有读取或写入该字段的代码。否则，该字段为__public__，可以从任何地方读取或写入。
+如果字段名称以“_”开头，表示 __私有（private）__ 。这表示只有该字段所在的类型才能访问该字段。否则，该字段为 __公有（public）__ ，可以从外部访问。
 
 <!-- Just like local variables, fields can be `var` or `let`. Nevertheless, rules for field assignment differ a bit from variable assignment. No matter the type of the field (either `var` or `let`), either: -->
-和局部变量一样，字段也可以用var或let定义。但是，字段分配的规则与变量分配有所不同。无论字段的类型（`var`还是`let`），都需要遵守下面的约定：
+和局部变量一样，字段也可以用var或let定义。但是字段分配与变量的初始化方式有所不同。无论字段的类型（`var`还是`let`），都需要遵守下面的约定：
 <!-- 1. an initial value has to be assigned in their definition or -->
 <!-- 2. an initial value has to be assigned in the constructor method. -->
 1.必须在其定义中分配一个初始值（或第2条）
 2.必须在构造方法中分配一个初始值。
 
 <!-- In the example below, the initial value of the two fields of the class `Wombat` is assigned at the definition level: -->
-在下面的示例中，类`Wombat`的两个字段在定义时分配了初始值：
+在下面的示例中，类`Wombat`的两个字段在定义时进行了初始值：
 ```pony
 class Wombat
   let name: String = "Fantastibat"
   var _hunger_level: U32 = 0
 ```
 <!-- Alternatively, these fields could be assigned in the constructor method: -->
-也可以在构造函数中设置这些字段：
+也可以在构造函数中初始化这些字段：
 
 ```pony
 class Wombat
@@ -134,10 +134,10 @@ class Wombat
     _hunger_level = hunger
 ```
 <!-- If the assignment is not done at the definition level or in the constructor, an error is raised by the compiler. This is true for both `var` and `let` fields. -->
-如果在定义和在构造函数中都没有初始化字段，就会引发编译错误。对于`var`和`let`字段都是如此。
+如果在定义时和构造函数中都没有初始化字段，就会导致编译错误。对于`var`和`let`声明的字段都是如此。
 
 <!-- Please note that the assignment of a value to a field has to be explicit. The below example raises an error when compiled, even when the field is of `var` type: -->
-请注意，必须将字段的值进行明确的初始化。下面示例尝试其他函数中初始化字段，在编译时会引发错误，即便该字段是`var`类型的也不行：
+注意，字段必须直接初始化。下面示例其他函数中初始化字段，导致了编译错误，即便该字段是`var`类型也不可以：
 ```pony
 class Wombat
   let name: String
@@ -152,7 +152,7 @@ class Wombat
     _hunger_level = hunger_level
 ```
 <!-- We will see later in the Methods section that a class can have several constructors. For now, just remember that if the assignment of a field is not done at the definition level, it has to be done in each constructor of the class the field belongs to. -->
-稍后在`方法`章节中，我们将看到一个类可以具有多个构造函数。现在，请记住，如果没有在定义时对字段做出初始化，就必须在该字段所属的类的每个构造函数中进行赋值。
+在后面的`方法`章节中，我们会讲到一个类可以有多个构造函数。现在，请记住，如果没有在定义时对字段初始化，就必须在该字段所属类的所有构造函数中进行赋值。
 
 <!-- As for variables, using `var` means a field can be assigned and reassigned as many times as you like in the class. Using `let` means the field can only be assigned once. -->
 使用`var`声明的字段可以多次赋值。使用`let`声明的字段只能被初始化一次。
