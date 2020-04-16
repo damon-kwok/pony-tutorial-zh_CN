@@ -1,5 +1,5 @@
 ---
-title: "Reference Capability Matrix"
+title: "权能矩阵（Reference Capability Matrix）"
 section: "引用权能（Reference Capabilities）"
 menu:
   toc:

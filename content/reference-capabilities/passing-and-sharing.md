@@ -14,7 +14,7 @@ toc: true
 ## Passing
 
 <!-- For an object to be mutable, we need to be sure that no _other_ actor can read from or write to that object. The three mutable reference capabilities (`iso`, `trn`, and `ref`) all make that guarantee. -->
-对于要可变的对象，我们需要确保没有_other_ actor可以从该对象读写。三种可变引用权能(`iso`、`trn`和`ref`)都保证了这一点。
+对于要可变的对象，我们需要确保没有 _other_ actor可以从该对象读写。三种可变引用权能(`iso`、`trn`和`ref`)都保证了这一点。
 
 <!-- But what if we want to pass a mutable object from one actor to another? To do that, we need to be sure that the actor that is _sending_ the mutable object also _gives up_ the ability to both read from and write to that object. -->
 但是如果我们想要将一个可变对象从一个参与者传递给另一个参与者呢?为此，我们需要确保正在_sending_可变对象的actor也_give up_从该对象读写的权能。

@@ -1,5 +1,5 @@
 ---
-title: "Arrow Types aka Viewpoints"
+title: "箭头的用法（Arrow Types aka Viewpoints）"
 section: "引用权能（Reference Capabilities）"
 menu:
   toc:
