@@ -9,7 +9,7 @@ menu:
 toc: true
 ---
 <!-- Now that you've successfully installed the Pony compiler, let's start programming! Our first program will be a very traditional one. We're going to print "Hello, world!". First, create a directory called `helloworld`: -->
-你已经成功的安装了Pony编译器，我们来编写自己的第一个Pony程序：输出"hello,world!"。首先，创建一个目录：`helloworld`：
+你已经成功的安装了Pony编译器，来试着编写第一个Pony程序：输出"hello,world!"。首先，创建一个目录：`helloworld`：
 
 ```bash
 $ mkdir helloworld
@@ -17,7 +17,7 @@ $ cd helloworld
 ```
 
 <!-- __Does the name of the directory matter?__ Yes, it does. It's the name of your program! By default when your program is compiled, the resulting executable binary will have the same name as the directory your program lives in. You can also set the name using the --bin-name or -b options on the command line. -->
-__目录名称重要吗？__ 是的。这将是你的程序最终输的名！默认情况下，在编译程序时，生成的可执行二进制文件将使用源码的目录名。你可以在命令行上使用--bin-name或-b选项指定想要的文件名。
+__目录名称重要吗？__ 重要。这将是程序编译后的文件名！默认情况下，编译程序生成的可执行文件将使用源码的目录名，想要的文件名需要在命令行上使用`--bin-name`或`-b`选项指。
 
 <!-- ## The code -->
 ## 代码
@@ -61,16 +61,16 @@ $ docker run -v Some_Absolute_Path/helloworld:/src/main ponylang/ponyc
 注意，需要将目录路径替换成你自己的。
 
 <!-- Look at that! It built the current directory, `.`, plus the stuff that is built into Pony, `builtin`, it generated some code, optimised it, created an object file (don't worry if you don't know what that is), and linked it into an executable with whatever libraries were needed. If you're a C/C++ programmer, that will all make sense to you, otherwise, it probably won't, but that's ok, you can ignore it. -->
-你会发现，它在当前目录进行了构建，`.`，Pony对代码进行了优化，并创建了一些目标文件（如果您不知道那是什么，不用担心） ，然后将其链接到了一个可执行文件中。如果您是C/C++程序员，那对你来说可能是有意义的，否则你可以忽略它。
+你会发现，它在当前目录进行了构建，`.`，Pony对代码进行了优化，并创建了一些目标文件（如果你不知道那是什么，不用担心） ，然后将其链接到了一个可执行文件中。如果你是C/C++程序员，那对你来说可能是有意义的，否则你可以忽略它。
 
 <!-- __Wait, it linked too?__ Yes. You won't need a build system (like `make`) for Pony. It handles that for you (including handling the order of dependencies when you link to C libraries, but we'll get to that later). -->
-__构建过程中也进行链接吗？__ 是的。Pony不需要额外的构建程序（例如`make`），自己就会处理（包括在链接到C库时处理依赖项的顺序，后面章节会介绍）。
+__构建过程中也进行链接吗？__ 没错，Pony不需要额外的构建程序（例如`make`），自己能处理（包括在链接到C库时处理依赖项的顺序，后面章节会介绍）。
 
 <!-- ## Running the program -->
 ## 运行程序
 
 <!-- Now we can run the program: -->
-现在可以运行程序了：
+运行程序：
 
 ```bash
 $ ./helloworld
@@ -78,4 +78,4 @@ Hello, world!
 ```
 
 <!-- Congratulations, you've written your first Pony program! Next, we'll explain what some of that code does. -->
-恭喜，你已经完成了第一个Pony程序！下一节我们会讲解这几行代码的含义。
+恭喜你，完成了第一个Pony程序！下节我们讲解代码的含义。
