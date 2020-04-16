@@ -1,6 +1,6 @@
 # baseURL = "https://tutorial.ponylang.io/"
-# baseURL = "https://damon-kwok.github.io/pony-tutorial/"
-baseURL = "http://127.0.0.1:9001/public"
+baseURL = "https://damon-kwok.github.io/pony-tutorial/"
+# baseURL = "http://127.0.0.1:9001/public"
 languageCode = "zh-cn"
 title = "Pony 教程"
 theme = "pony-doc-site"
