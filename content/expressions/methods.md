@@ -191,10 +191,10 @@ class Bar
 __我必须为所有的参数提供默认值吗?__ 不需要，可以自己决定为哪些参数设置默认值。
 
 <!-- ## Named arguments -->
-## 参数命名（Named arguments）
+## 命名传参（Named arguments）
 
 <!-- So far, when calling methods we have always given all the arguments in order. This is known as using __positional__ arguments. However, we can also specify the arguments in any order by specifying their names. This is known as using __named__ arguments. -->
-到目前为止，在调用方法时，我们总是按顺序给出所有参数。这被称为使用 __`位置传参`或`顺序传参`（positional arguments）__ 。但是，我们也可以通过指定参数的名称来指定传参顺序。这被称为 __`命名传参`或`动态传参`（named arguments）__。
+到目前为止，在调用方法时，我们总是按顺序给出所有参数。这被称为使用 __`位置传参`或`顺序传参`（positional arguments）__ 。但是，我们也可以通过指定参数的名称来指定传参顺序。这被称为 __`命名传参`或`无序传参`（named arguments）__。
 
 <!-- To call a method using named arguments the `where` keyword is used, followed by the named arguments and their values. -->
 要使用`命名传参`的方式调用方法，需要使用`where`关键字，然后是形参名和值。
