@@ -54,7 +54,7 @@ Linking ./helloworld
 ```
 
 <!-- (If you're using Docker, you'd write something like `$ docker run -v Some_Absolute_Path/helloworld:/src/main ponylang/ponyc`, depending of course on what the absolute path to your `helloworld` directory is.) -->
-如果你想要Docker中使用Pony，可以这么做：
+如果想在Docker中使用Pony，可以这么做：
 ```bash
 $ docker run -v Some_Absolute_Path/helloworld:/src/main ponylang/ponyc 
 ```
