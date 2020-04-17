@@ -318,7 +318,7 @@ Pony提供的最后一个循环表达式是`repeat``until`。在这里，我们�
 Pony中的`while`和`repeat`的区别是：
 
 <!-- 1. We always go around the loop at least once with `repeat`, whereas with `while` we may not go round at all. -->
-<!-- 1. The termination condition is reversed. -->
+<!-- 2. The termination condition is reversed. -->
 1. `repeat`表达式至少会执行一次，而使用`while`则可能一次都不执行。 
 2. 结束条件相反。
 

@@ -28,11 +28,11 @@ Pony还有一种不同的功能，称为`引用权能`。对象功能是指被�
 <!-- * It's exception safe. There are no runtime exceptions. All exceptions have defined semantics, and they are _always_ handled. -->
 <!-- * It's data-race-free. Pony doesn't have locks or atomic operations or anything like that. Instead, the type system ensures _at compile time_ that your concurrent program can never have data races. So you can write highly concurrent code and never get it wrong. -->
 <!-- * It's deadlock free. This one is easy because Pony has no locks at all! So they definitely don't deadlock, because they don't exist. -->
-它是类型安全的。类型安全。有一个数学[证明](http://www.ponylang.org/media/papers/opsla237-clebsch.pdf)和一切。
-它是内存安全的。这个带有类型安全，但仍然很有趣。没有悬空指针，没有缓冲区溢出，糟糕的是，这种语言甚至没有_null_的概念!
-它是异常安全的。没有运行时异常。所有的异常都有定义的语义，它们总是被处理。
-*数据竞争。Pony没有锁或原子操作或任何类似的东西。相反，类型系统确保_at编译时您的并发程序永远不会发生数据竞争。因此，您可以编写高度并发的代码，并且永远不会出错。
-*没有死锁。这个很简单，因为Pony根本没有锁!所以它们肯定不会死锁，因为它们不存在。
+* 它是类型安全的。类型安全。有一个数学[证明](http://www.ponylang.org/media/papers/opsla237-clebsch.pdf)和一切。
+* 它是内存安全的。这个带有类型安全，但仍然很有趣。没有悬空指针，没有缓冲区溢出，糟糕的是，这种语言甚至没有_null_的概念!
+* 它是异常安全的。没有运行时异常。所有的异常都有定义的语义，它们总是被处理。
+* 数据竞争。Pony没有锁或原子操作或任何类似的东西。相反，类型系统确保_at编译时您的并发程序永远不会发生数据竞争。因此，您可以编写高度并发的代码，并且永远不会出错。
+* 没有死锁。这个很简单，因为Pony根本没有锁!所以它们肯定不会死锁，因为它们不存在。
 
 <!-- Reference capabilities are what make all that awesome possible. -->
 引用权能使所有这些都成为可能。
