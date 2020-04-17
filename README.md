@@ -4,7 +4,10 @@
 <!-- Hi there! This is the source for the Pony tutorial. -->
 <!-- 这是一份Ponyb语言的教学指南。 -->
 Pony编程语言[官方教程](https://github.com/ponylang/pony-tutorial)的中文翻译。
-[在线阅读](https://damon-kwok.github.io/pony-tutorial/)
+
+[`在线阅读`](https://damon-kwok.github.io/pony-tutorial/)
+
+如果你喜欢Pony，请支持Pony团队：[❤️捐款](https://opencollective.com/ponyc)
 
 | 章节                                | 进度   |
 | ------                              | ------ |
