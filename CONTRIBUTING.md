@@ -5,7 +5,7 @@
 大家好！感谢你对关注Pony教程。本教程使用Markdown格式编写，并使用[Hugo](https://gohugo.io/)和[Netlify](https://www.netlify.com/)进行编译。我们非常欢迎提交PR。
 
 <!-- Please note, that by submitting any content to the Pony Tutorial book you are agreeing that it can be licensed under our [license](LICENSE.md). Furthermore, you are testifying that you own the copyright to the submitted content and indemnify Pony Tutorial from any copyright claim that might result from your not being the authorized copyright holder. -->
-需要注意，向本教程提交的内容必须要复合我们使用的[许可证](license.md)。此外，你所提交内容不能存在版权问题，保证《Pony 教程》不会受到版权纠纷的影响。
+需要注意，向本教程提交的内容必须要复合我们使用的[许可证](LICENSE.md)。此外，你所提交内容不能存在版权问题，保证《Pony 教程》不会受到版权纠纷的影响。
 
 <!-- ## How the tutorial is organized -->
 ## 教程组织结构
