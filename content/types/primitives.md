@@ -63,7 +63,7 @@ actor Main
 基元类非常强大，尤其是作为枚举使用时。与其他语言中的枚举不同，Pony中枚举的每个`值`都是一个完整类型，因此可以将数据和函数附加到枚举值上。
 
 <!-- ## Built-in primitive types -->
-## 内置基元类
+## 内置的基元类型（Built-in primitive types）
 
 <!-- The __primitive__ keyword is also used to introduce certain built-in "machine word" types. Other than having a value associated with them, these work like user-defined primitives. These are: -->
 _primitive_ 关键字还用于引入某些内置的"machine word"类型。除了具有与之关联的值外，这些还类似于用户定义的原语。这些是：

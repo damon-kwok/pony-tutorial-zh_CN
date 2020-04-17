@@ -245,8 +245,8 @@ let my_stringable_array: Array[Stringable] ref =
 <!-- Here `my_stringable_array` is coerced to `Array[Stringable] ref`. This works because `Stringable` is a trait that both `String` and `U64` implement. -->
 这里，`my_stringable_array`被强制转换为`Array [Stringable] ref`。之所以能编译通过，是因为String和U64都实现了`Stringable`特征。
 
-<!-- It is also possible to return an array with a different [Reference Capability](/reference-capabilities.html) than `ref` just by specifying it on the type: -->
-通过在数组上指定类型说明符`val`，可以与[ref]不同的[引用权能（Reference Capability）](/reference-capabilities.html)的数组：
+<!-- It is also possible to return an array with a different [Reference Capability]({{< relref "reference-capabilities/_index.md" >}}) than `ref` just by specifying it on the type: -->
+通过在数组上指定类型说明符`val`，可以与[ref]不同的[引用权能（Reference Capability）]({{< relref "reference-capabilities/_index.md" >}})的数组：
 
 ```pony
 let my_immutable_array: Array[Stringable] val =
@@ -256,8 +256,8 @@ let my_immutable_array: Array[Stringable] val =
   ]
 ```
 
-<!-- This way array literals can be used for creating arrays of any [Reference Capability](/reference-capabilities.html). -->
-你可以创建任何[引用权能（Reference Capability）](/reference-capabilities.html)的数组类型。
+<!-- This way array literals can be used for creating arrays of any [Reference Capability]({{< relref "reference-capabilities/_index.md" >}}). -->
+你可以创建任何[引用权能（Reference Capability）]({{< relref "reference-capabilities/_index.md" >}})的数组类型。
 
 <!-- ### `As` Expression -->
 ### as表达式
@@ -286,5 +286,5 @@ let my_as_array =
 <!-- Constructing an array with a literal creates new references to its elements. Thus, to be 100% technically correct, array literal elements are inferred to be the alias of the actual element type. If all elements are of type `T` the array literal will be inferred as `Array[T!] ref` that is as an array of aliases of the type `T`. -->
 用字面量构造一个数组会创建对其元素的新引用。因此，为了确保100%的正确性，会将数组元素推导为实际元素类型的别名。如果所有元素的类型均为T，则将数组的北行会被推导为`Array [T!] ref`，即类型别名为T的数组。
 
-<!-- It is thus necessary to use elements that can have more than one reference of the same type (e.g. types with `val` or `ref` capability) or use ephemeral types for other capabilities (as returned from [constructors](/types/classes.html#constructors) or the [consume expression](/reference-capabilities/consume-and-destructive-read.html)). -->
-要使用具有多种引用权能的数组（例如val和ref引用权能类型）可以参考下（[构造函数](/types/classes.html#constructors)和[所有权转让](/reference-capabilities/consume-and-destructive-read.html)章节）。
+<!-- It is thus necessary to use elements that can have more than one reference of the same type (e.g. types with `val` or `ref` capability) or use ephemeral types for other capabilities (as returned from [constructors]({{< relref "types/classes.md#constructors" >}}) or the [consume expression]({{< relref "reference-capabilities/consume-and-destructive-read.md" >}})). -->
+要使用具有多种引用权能的数组（例如val和ref引用权能类型）可以参考下（[构造函数]({{< relref "types/classes.md#构造函数" >}})和[所有权转让]({{< relref "reference-capabilities/consume-and-destructive-read.md" >}})章节）。

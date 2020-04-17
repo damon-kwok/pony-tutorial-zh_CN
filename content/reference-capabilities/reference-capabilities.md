@@ -186,5 +186,5 @@ class Foo
     x = x'
 ```
 
-<!-- But, that's probably not what you'd really want to do. Better to use the capabilities recovery facilities of Pony that we'll cover that later in the [Recovering Capabilities](recovering-capabilities.html) section. -->
-但是，这不是最佳做法。最好的做法是使用Pony的`权能借用`功能，我们将在后面的[权能借用](recovery-capabilities.html)一节中介绍。
+<!-- But, that's probably not what you'd really want to do. Better to use the capabilities recovery facilities of Pony that we'll cover that later in the [Recovering Capabilities]({{< relref "recovering-capabilities.md" >}}) section. -->
+但是，这不是最佳做法。最好的做法是使用Pony的`权能借用`功能，我们将在后面的[权能借用]({{< relref "recovering-capabilities.md" >}})一节中介绍。

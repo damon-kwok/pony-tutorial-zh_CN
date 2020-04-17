@@ -34,8 +34,8 @@ __所有的类型都必须以大写字母开头吗？__ 没错！当你阅读Pon
 <!-- ### Fields -->
 ### 字段
 
-<!-- These are just like fields in C structs or fields in classes in C++, C#, Java, Python, Ruby, or basically any language, really. There are three kinds of fields: `var`, `let`, and `embed` fields. A `var` field can be assigned to over and over again, but a `let` field is assigned to in the constructor and never again. Embed fields will be covered in more detail in the documentation on [variables](/expressions/variables.html). -->
-和C++、C#、Java、Python、Ruby等语言中的字段（类数据成员，类成员变量）类似。字段有三种声明方式：`var`,`let`和`embed`。`var`字段可以初始化和反复赋值，但是`let`字段初始化后无法再次赋值,`embed`字段比较复杂，详情参考[变量](/expressions/variables.html)章节。
+<!-- These are just like fields in C structs or fields in classes in C++, C#, Java, Python, Ruby, or basically any language, really. There are three kinds of fields: `var`, `let`, and `embed` fields. A `var` field can be assigned to over and over again, but a `let` field is assigned to in the constructor and never again. Embed fields will be covered in more detail in the documentation on [variables]({{< relref "expressions/variables.md" >}}). -->
+和C++、C#、Java、Python、Ruby等语言中的字段（类数据成员，类成员变量）类似。字段有三种声明方式：`var`,`let`和`embed`。`var`字段可以初始化和反复赋值，但是`let`字段初始化后无法再次赋值,`embed`字段比较复杂，详情参考[变量]({{< relref "expressions/variables.md" >}})章节。
 
 ```pony
 class Wombat
@@ -130,8 +130,8 @@ class Forest
   let _owl: Owl = Owl
   let _hawk: Hawk = Hawk
 ```
-<!-- This is explained later, in more detail in the [sugar](/expressions/sugar.html) section. -->
-稍后我们会在[语法糖](/expressions/sugar.html)章节中做出详细解释。
+<!-- This is explained later, in more detail in the [sugar]({{< relref "expressions/sugar.md" >}}) section. -->
+稍后我们会在[语法糖]({{< relref "expressions/sugar.md" >}})章节中做出详细解释。
 
 <!-- ### Functions -->
 ### 成员函数

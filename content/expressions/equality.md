@@ -89,8 +89,8 @@ interface Equatable[A: Equatable[A] #read]
 <!-- ## Primitives and equality -->
 ## 基元类的类型比较（Primitives and equality）
 
-<!-- As you might remember from [Chapter 2](https://tutorial.ponylang.io/types/primitives.html), primitives are the same as classes except for two important differences: -->
-你可能还记得在[第二章：基元类](https://tutorial.ponylang.io/types/primitives.html)中讲过，除了两个重要的区别之外，基元类与类有两个重要区别:
+<!-- As you might remember from [Chapter 2]({{< relref "types/primitives.md" >}}), primitives are the same as classes except for two important differences: -->
+你可能还记得在[第二章：基元类]({{< relref "types/primitives.md" >}})中讲过，除了两个重要的区别之外，基元类与类有两个重要区别:
 
 <!-- * A primitive has no fields. -->
 <!-- * There is only one instance of a user-defined primitive. -->

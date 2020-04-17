@@ -13,9 +13,9 @@ menu:
 我们已经介绍了Pony的类型系统的基础知识，然后是表达式，这一章关于引用权能将介绍Pony的类型系统的另一个特性。目前还没有任何主流编程语言具有引用权能。什么是引用权能?
 
 <!-- Well, a reference capability is built on the idea of "a capability". -->
-<!-- A capability is the ability to do "something". Usually that "something" involves an external resource that you might want access to; like the filesystem or the network. This usage of capability is called an object capability and is discussed [in the next chapter](/object-capabilities.html). -->
+<!-- A capability is the ability to do "something". Usually that "something" involves an external resource that you might want access to; like the filesystem or the network. This usage of capability is called an object capability and is discussed [in the next chapter]({{< relref "object-capabilities/_index.md" >}}). -->
 引用权能是建立在`能力`这个概念上的。
-能力是做`某事`的能力。通常，`某物`涉及您可能希望访问的外部资源;比如文件系统或网络。这种能力的使用被称为对象能力，[在下一章](/object-capabilities.html)中将对此进行讨论。
+能力是做`某事`的能力。通常，`某物`涉及您可能希望访问的外部资源;比如文件系统或网络。这种能力的使用被称为对象能力，[在下一章]({{< relref "object-capabilities/_index.md" >}})中将对此进行讨论。
 
 <!-- Pony also features a different kind of capability, called a "reference capability". Where object capabilities are about being granted the ability to do things with objects, reference capabilities are about denying you the ability to do things with memory references. For example, "you can have access to this memory BUT ONLY for reading it. You can not write to it". That's a reference capability and it's denying you access to do things. -->
 Pony还有一种不同的功能，称为`引用权能`。对象功能是指被授予使用对象执行操作的能力，而引用权能是指拒绝使用内存引用执行操作的能力。例如，"你可以访问这个内存，但只能读取它。你不能向它发送消息"。这是一个引用权能，它拒绝你做事情。

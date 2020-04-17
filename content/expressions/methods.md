@@ -291,9 +291,8 @@ actor Main
     end
 ```
 
-<!-- They are presented more in-depth in the [Object Literals section](/expressions/object-literals.html). -->
-在[Object Literals section](/expressions/object-literals.html)中有更详细的介绍。
-
+<!-- They are presented more in-depth in the [Object Literals section]({{< relref "expressions/object-literals.md" >}}). -->
+在[匿名对象]({{< relref "expressions/object-literals.md" >}})中有更详细的介绍。
 <!-- ## Privacy -->
 ## 私有方法（Privacy）
 
@@ -306,9 +305,8 @@ __我可以用2个(或更多)下划线来开始我的方法名吗?__ 不行。�
 <!-- ## Precedence -->
 ## 调用优先级(Precedence)
 
-<!-- We have talked about [precedence of operators](/expressions/ops.html#precedence) before, and in Pony, method calls and field accesses have higher precedence than any operators. -->
-我们之前已经讨论过[运算符符优先级](/expressions/ops.html#precedence)，在Pony中，`方法调用`和`字段访问`的优先级比所有的运算符都要高。
-
+<!-- We have talked about [precedence of operators]({{< relref "expressions/ops.md#precedence" >}}) before, and in Pony, method calls and field accesses have higher precedence than any operators. -->
+我们之前已经讨论过[运算符符优先级]({{< relref "expressions/ops.md#运算符优先级（Precedence）" >}})，在Pony中，`方法调用`和`字段访问`的优先级比所有的运算符都要高。
 <!-- To sum up, in complex expressions, -->
 我们来总结回顾一下,在复杂的表达式中:
 

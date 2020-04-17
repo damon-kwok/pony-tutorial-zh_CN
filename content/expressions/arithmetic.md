@@ -11,8 +11,8 @@ toc: true
 <!-- Arithmetic is about the stuff you learn to do with numbers in primary school: Addition, Subtraction, Multiplication, Division and so on. Piece of cake. We all know that stuff. We nonetheless want to spend a whole section on this topic, because when it comes to computers the devil is in the details. -->
 算术运算就是你在小学中学到的与数字有关的概念：加法，减法，乘法，除法等。小菜一碟。人人都知道这个东西。尽管如此，还是希望花点时间阅读下这一节教程，因为牵扯到计算机，魔鬼总是隐藏在细节中。
 
-<!-- As introduced in [Primitives](/types/primitives.html#built-in-primitive-types) numeric types in Pony are represented as a special kind of primitive that maps to machine words. Both integer types and floating point types support a rich set of arithmetic and bit-level operations. These are expressed as [Infix Operators](/expressions/ops.html#infix-operators) that are implemented as plain functions on the numeric primitive types. -->
-在[基元类](/types/primitives.html#built-in-primitive-types)章节中介绍过，Pony中的数字类型是一种映射到机器码的特殊原语。整数类型和浮点类型都支持一组丰富的算术运算和位运算。[中缀运算符](/expressions/ops.html#infix-operators)，在数字基元类型上作为普通函数实现。
+<!-- As introduced in [Primitives]({{< relref "types/primitives.md#built-in-primitive-types" >}}) numeric types in Pony are represented as a special kind of primitive that maps to machine words. Both integer types and floating point types support a rich set of arithmetic and bit-level operations. These are expressed as [Infix Operators]({{< relref "expressions/ops.md#infix-operators" >}}) that are implemented as plain functions on the numeric primitive types. -->
+在[基元类]({{< relref "types/primitives.md#内置的基元类型（Built-in primitive types）" >}})章节中介绍过，Pony中的数字类型是一种映射到机器码的特殊原语。整数类型和浮点类型都支持一组丰富的算术运算和位运算。[中缀运算符]({{< relref "expressions/ops.md#中缀运算符（Infix Operators）" >}})，在数字基元类型上作为普通函数实现。
 
 <!-- Pony focuses on two goals, performance and safety. From time to time, these two goals collide. This is true especially for arithmetic on integers and floating point numbers. Safe code should check for overflow, division by zero and other error conditions on each operation where it can happen. Pony tries to enforce as many safety invariants at compile time as it possibly can, but checks on arithmetic operations can only happen at runtime. Performant code should execute integer arithmetic as fast and with as few CPU cycles as possible. Checking for overflow is expensive, doing plain dangerous arithmetic that is possibly subject to overflow is cheap. -->
 Pony语言专注于两个目标，性能和安全性。这两个目标有时会发生冲突。对于整数和浮点数的算术尤其如此。为了确保代码安全，应在每个可能发生计算操的作上检查溢出，被零除和其他错误情况。 Pony尝试在编译时强制执行尽可能多的安全性检查，但是对算术运算的检查只能在运行时进行。另一方面，从代码的性能角度考虑，应尽快的执行整数算术运算，并在尽可能少的CPU周期内执行完毕。检查溢出是昂贵的，导致溢出的`简单危险算术`是廉价的。
@@ -41,7 +41,7 @@ I32.min_value() - 1 == I32.max_value()
 除零是一种特殊情况，它会影响除法运算符/和取余%运算符。在数学中，零除是不确定的。为了避免将除法定义为部分除法，在除数为零时引发错误或在这种情况下引入未定义的行为，当除数为`0`时，将 _normal_ 除法定义为`0`。如果不小心使用，可能会导致无提示错误。选择[部分和校验的算术](#partial-and-checked-arithmetic)以除以零。
 
 <!-- In contrast to [Unsafe Arithmetic](#unsafe-arithmetic) default arithmetic comes with a small runtime overhead because unlike the unsafe variants, it does detect and handle overflow and division by zero. -->
-与[Unsafe Arithmetic](#unsafe-arithmetic) 相比，默认算法具有一点点运行时开销，因为它与unsafe变体不同，它会检测并处理溢出和除零的情况。
+与[Unsafe Arithmetic](#非安全的算术运算符（Unsafe Arithmetic）) 相比，默认算法具有一点点运行时开销，因为它与unsafe变体不同，它会检测并处理溢出和除零的情况。
 
 ---
 

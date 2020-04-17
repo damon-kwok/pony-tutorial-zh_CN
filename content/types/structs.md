@@ -8,8 +8,8 @@ menu:
 toc: true
 ---
 
-<!-- A `struct` is similiar to a `class`. There's a couple very important differences. You'll use classes throughout your Pony code. You'll rarely use structs. We'll discuss structs in more depth in the [C-FFI chapter](/c-ffi.html) of the tutorial. In the meantime, here's a short introduction to the basics of structs. -->
-`结构体`和`类`有几个非常重要的区别。平时的Pony程序开发中一般都使用类，很少会使用结构。我们将在本教程的[C-FFI章](/c-ffi.html)中更深入地讨论结构。这里只做简短介绍。
+<!-- A `struct` is similiar to a `class`. There's a couple very important differences. You'll use classes throughout your Pony code. You'll rarely use structs. We'll discuss structs in more depth in the [C-FFI chapter]({{< relref "c-ffi/_index.md" >}}) of the tutorial. In the meantime, here's a short introduction to the basics of structs. -->
+`结构体`和`类`有几个非常重要的区别。平时的Pony程序开发中一般都使用类，很少会使用结构。我们将在本教程的[C-FFI章]({{< relref "c-ffi/_index.md" >}})中更深入地讨论结构。这里只做简短介绍。
 
 <!-- ## Structs are "classes for FFI" -->
 ## 结构体是用来做外部交互的
@@ -77,9 +77,9 @@ struct Pointer[A]
     compile_intrinsic
 ```
 
-<!-- Here we have two constructors. One that creates a new null Pointer, and another creates a Pointer with space for many instances of the type the Pointer is pointing at. Don't worry if you don't follow everything you are seeing in the above example. The important part is, it should basically look like the class constructor example [we saw earlier](/types/classes.html#what-goes-in-a-class). -->
+<!-- Here we have two constructors. One that creates a new null Pointer, and another creates a Pointer with space for many instances of the type the Pointer is pointing at. Don't worry if you don't follow everything you are seeing in the above example. The important part is, it should basically look like the class constructor example [we saw earlier]({{< relref "types/classes.md#what-goes-in-a-class" >}}). -->
 这里有两个构造函数。第一个创建一个新的空Pointer，第二个创建分配了内存空间的Pointer。
-<!-- 如果您不遵循上面示例中看到的所有内容，请不要担心。重要的部分是，它基本上应该看起来像类构造函数示例[我们先前看到的](/types/classes.html＃what-goes-in-a-class)。 -->
+<!-- 如果您不遵循上面示例中看到的所有内容，请不要担心。重要的部分是，它基本上应该看起来像类构造函数示例[我们先前看到的]({{< relref "types/classes.md＃what-goes-in-a-class" >}})。 -->
 
 <!-- ### Functions -->
 ### 成员函数
@@ -89,5 +89,5 @@ struct Pointer[A]
 
 ## We'll see structs again
 
-<!-- Structs play an important role in Pony's interactions with code written using C. We'll see them again in [C-FFI section](/c-ffi.html) of the tutorial. We probably won't see too much about structs until then. -->
-在Pony与C代码的交互中，结构体扮演着重要的角色。我们将在教程的[C-FFI部分](/c-ffi.html)中详细讲解结构体。现在，我们不需要过多关注结构体。
+<!-- Structs play an important role in Pony's interactions with code written using C. We'll see them again in [C-FFI section]({{< relref "c-ffi/_index.md" >}}) of the tutorial. We probably won't see too much about structs until then. -->
+在Pony与C代码的交互中，结构体扮演着重要的角色。我们将在教程的[C-FFI部分]({{< relref "c-ffi/_index.md" >}})中详细讲解结构体。现在，我们不需要过多关注结构体。
