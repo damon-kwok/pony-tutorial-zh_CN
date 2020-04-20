@@ -28,16 +28,16 @@ __动态语言中给`x`赋了整数值后在对其执行字符串操作会发生
 当你使用 _静态类型_ 语言时，变量具有类型。一个变量只能指向某一种类型（在Pony中，类型实际上可以是类型的集合，我们将在后面看到）。如果有一个整数型变量`x`，那就不能再赋值字符串。否则编译器会报错，程序会无法运行。
 
 <!-- ## Types are guarantees -->
-## 类型带来的保证
+## 类型提供的保证和约束（Types are guarantees）
 
 <!-- When the compiler knows what types things are, it can make sure some things in your program work without you having to run it or test it. These things are the _guarantees_ that a language's type system provides. -->
-当编译器知道数据类型时，它可以确保程序中的数据符合预期可以运行，而无需在运行时再对数据进行类型检测。这就是静态语言的类型系统提供的 _保证_ 。
+当编译器知道数据类型时，它可以确保程序中的数据符合预期可以运行，而无需在运行时再对数据进行类型检测。这就是静态语言的类型系统提供的 _保证（约束、限制）_ 。
 
 <!-- The more powerful a type system is, the more things it can prove about your program without having to run it. -->
 类型系统越强大，在编译时就可以从程序获得越多有用的信息（用来分析）。
 
 <!-- __Do dynamic types make guarantees too?__ Yes, but they do it at runtime. For example, if you call a method that doesn't exist, you will usually get some kind of exception. But you'll only find out when you try to run your program. -->
-__动态类型是否也可以保证？__ 可以是可以，但需要是在运行时间才能处理。例如，如果您调用一个不存在的方法，会触发到某种异常。但是，只有在运行到这行代码时，才会触发。
+__动态类型是否也可以提供一些保证？__ 可以是可以，但需要是在运行时间才能处理。例如，如果您调用一个不存在的方法，会触发到某种异常。但是，只有在运行到这行代码时，才会触发。
 
 <!-- ## What guarantees does Pony's type system give me? -->
 ## Pony的类型系统可以为我们带来什么保证？

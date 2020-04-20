@@ -25,9 +25,9 @@ toc: true
 * `iso <: trn`。`iso`是_read和write unique_，` trn`是_write unique_，所以用`iso`代替`trn`是安全的。
 * `trn <: ref`。一个`trn`是可变的，也_write unique_。`ref`是可变的，但不能保证唯一性。用`trn`代替`ref`是安全的。
 * `trn <: val`。这个很有趣。`trn`是_write unique_，` val`是全局不可变的，那么为什么用`trn`代替`val`是安全的呢?关键是，为了做到这一点，你必须放弃你所拥有的一切。如果你放弃了_only_变量可以写一个对象，你知道没有变量可以写它。这意味着它是全局不变的。
-* `ref <: box`。`ref`保证没有_other_actor可以读写对象。`box`只是保证没有_other_ actor可以写对象，所以用`ref`代替`box`是安全的。
-* `val <: box`。一个`val`保证_no_actor，即使是这个，也不能写对象。一个`box`只是保证没有_other_ actor可以写对象，所以用`val`代替`box`是安全的。
-* `box <: tag`。`box`保证没有其他参与者可以写入对象，而`tag`则完全没有保证，所以用`box`替换`tag`是安全的。
+* `ref <: box`。`ref`约束可以保证没有`其他actor`可以读写对象。`box`只是确保没有`其他actor`可以写对象，所以用`ref`代替`box`是安全的。
+* `val <: box`。一个`val`约束 _no_actor，即使是这个，也不能写对象。一个`box`只是约束没有`其他actor`可以写对象，所以用`val`代替`box`是安全的。
+* `box <: tag`。`box`约束限制没有其他参与者可以写入对象，而`tag`则完全没有提供约束性保证，所以用`box`替换`tag`是安全的。
 
 <!-- Subtyping is _transitive_. That means that since `iso <: trn` and `trn <: ref` and `ref <: box`, we also get `iso <: box`. -->
 子类型化_transitive_。这意味着，由于`iso <: trn`和`trn <: ref`和`ref <: box`，我们也得到`iso <: box`。
@@ -44,11 +44,11 @@ toc: true
 <!-- * `box! <: box`. A `box` only guarantees that _other_ actors can't write to the object. Both `val` and `ref` make that guarantee too, so why can `box` only alias as `box`? It's because we can't make _more_ guarantees when we alias something. That means `box` can only alias as `box`. -->
 <!-- * `tag! <: tag`. A `tag` doesn't make any guarantees at all. Just like with a `box`, we can't make more guarantees when we make a new alias, so a `tag` can only alias as a `tag`. -->
 *`iso !<:tag`。这是一个相当大的变化。而不是像`iso`这样的所有东西的子类型，唯一的东西是`iso!`是tag的子类型。这是因为`iso`仍然存在，并且仍然是_read和write unique_。任何别名既不能从对象中读取，也不能从对象中写入。这意味着`iso!`'只能是`tag`的子类型。
-*`trn!<:box`。这也是一个变化，但并不是很大的变化。因为`trn`只是_write unique_，所以别名可以从对象中读取，但是别名不能写入对象。这意味着我们可以有`box`或`val`别名-除了`val`保证_no_ alias可以写入对象!因为我们的`trn`仍然存在，并可以写入对象，`val`别名将打破`val`作出的保证。所以一个`ref`!只能是`box`的子类型(及及物动词`tag`)。
-*`ref!<:ref`。由于`ref`只保证_other_ actor既不能从对象中读取也不能从对象中写入，所以可以在同一个actor中创建更多`ref`别名。
-*`val!<:val`。因为`val`只能保证_no_ actor可以写入对象，所以可以使用更多的`val`别名，因为它们也不能写入对象。
-*`box!<:box`。一个`框`只能保证_other_ actor不能写对象。`val`和`ref`都做了保证，那么为什么`box`只能别名为`box`呢?这是因为我们不能做更多的保证当我们别名的东西。这意味着`box`只能别名为`box`。
-*`tag!<:tag`。一个`tag`根本不能保证什么。就像`框`一样，我们不能在创建新别名时做更多的保证，因此`tag`只能作为`tag`的别名。
+*`trn!<:box`。这也是一个变化，但并不是很大的变化。因为`trn`只是 _write unique_ ，所以别名可以从对象中读取，但是别名不能写入对象。这意味着我们可以有`box`或`val`别名-除了`val`约束和限制 _no_ alias可以写入对象!因为我们的`trn`仍然存在，并可以写入对象，`val`别名将打破`val`作出的约束限制。所以一个`ref`!只能是`box`的子类型(及及物动词`tag`)。
+*`ref!<:ref`。由于`ref`只约束和限制 _other_ actor既不能从对象中读取也不能从对象中写入，所以可以在同一个actor中创建更多`ref`别名。
+*`val!<:val`。因为`val`只能约束和限制 _no_ actor可以写入对象，所以可以使用更多的`val`别名，因为它们也不能写入对象。
+*`box!<:box`。一个`框`只能约束`其他actor`不能写对象。`val`和`ref`都做了保证，那么为什么`box`只能别名为`box`呢?这是因为我们不能做更多的保证当我们别名的东西。这意味着`box`只能别名为`box`。
+*`tag!<:tag`。一个`tag`根本没有提供什么约束。就像`box`一样，我们不能在创建新别名时做更多的约束，因此`tag`只能作为`tag`的别名。
 
 ## Ephemeral substitution
 
@@ -60,7 +60,7 @@ toc: true
 <!-- * `ref^ <: ref^` and `ref^ <: ref` and `ref <: ref^`. Here, we have another case. Not only is a `ref^` a subtype of a `ref`, it's also a subtype of a `ref^`. What's going on here? The reason is that an ephemeral reference capability is a way of saying "a reference capability that, when aliased, results in the base reference capability". Since a `ref` can be aliased as a `ref`, that means `ref` and `ref^` are completely interchangeable. -->
 <!-- * `val^`, `box^`, `tag^`. These all work the same way as `ref`, that is, they are interchangeable with the base reference capability. It's for the same reason: all of these reference capabilities can be aliased as themselves. -->
 * `iso^ <: iso`。这很简单。当我们给一个`iso^`一个名字时，通过把它赋值给某个东西或者把它作为参数传递给某个方法，它就会失去`^`而变成一个普通的旧的`iso`。我们知道我们已经放弃了之前的`iso`，所以换一个新的是安全的。
-* `trn^ <: trn`。这和`iso^` 完全一样。保证是较弱的(_write uniqueness_而不是_read和write uniquess_)，但它的工作方式是一样的。
+* `trn^ <: trn`。这和`iso^` 完全一样。约束性是较弱的(_write uniqueness_而不是_read和write uniquess_)，但它的工作方式是一样的。
 * `ref^ <: ref` 和`ref ^ <: ref`和`ref <: ref ^。这里，我们有另一个例子。a` ref`不仅是a` ref`的子类型，它也是a` `ref`的子类型。这是怎么回事?原因是临时引用权能是`在别名时产生基本引用权能的引用权能`的一种说法。由于`ref`可以别名为`ref`，这意味着`ref`和`ref^`是完全可以互换的。
 * ` val^`，` box^`，` tag^`。它们的工作方式都与`ref`相同，即可以与基本引用权能互换。原因是一样的:所有这些引用权能都可以作为它们自己的别名。
 

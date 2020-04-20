@@ -9,7 +9,7 @@ toc: true
 ---
 
 <!-- We mentioned previously that the C FFI can be used to break pretty much every guarantee that Pony makes. This is because, once you've called into C, you are executing arbitrary machine code that can stomp memory addresses, write to anything, and generally be pretty badly behaved. -->
-我们之前提到过，cffi可以用来打破Pony做出的几乎所有保证。这是因为，一旦调用了C语言，就会执行任意的机器码，这些代码会破坏内存地址、写入任何东西，而且通常表现得非常糟糕。
+我们之前提到过，C FFI可以用来打破Pony做出的几乎所有约束限制。这是因为，一旦调用了C语言，就可能会执行任意的机器码，这些代码会破坏内存地址、修改任何数据，而且通常表现得非常糟糕。
 
 <!-- ## Trust boundaries -->
 ## 边界信任

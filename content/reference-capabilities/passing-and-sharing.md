@@ -9,15 +9,15 @@ toc: true
 ---
 
 <!-- Reference capabilities make it safe to both __pass__ mutable data between actors and to __share__ immutable data amongst actors. Not only that, they make it safe to do it with no copying, no locks, in fact, no runtime overhead at all. -->
-引用权能使得在参与者之间可以安全地传递可变数据，在参与者之间可以安全地共享不变数据。不仅如此，它们还可以安全地进行操作，不需要复制，不需要锁，实际上，根本不需要运行时开销。
+引用权能让我们在actor之间可以安全地`传递`可变数据，也可以在actor之间可以安全地`共享`不变数据。不仅如此，它们还提供了安全的方法进行数据处理，不需要复制，不需要加锁，并且不会有运行时开销。
 
 ## Passing
 
 <!-- For an object to be mutable, we need to be sure that no _other_ actor can read from or write to that object. The three mutable reference capabilities (`iso`, `trn`, and `ref`) all make that guarantee. -->
-对于要可变的对象，我们需要确保没有 _other_ actor可以从该对象读写。三种可变引用权能(`iso`、`trn`和`ref`)都保证了这一点。
+对于要可变的对象，我们需要确保没有`其他actor`可以对该对象读写。有三种可变引用权能(`iso`、`trn`和`ref`)都可以对此进行限制。
 
 <!-- But what if we want to pass a mutable object from one actor to another? To do that, we need to be sure that the actor that is _sending_ the mutable object also _gives up_ the ability to both read from and write to that object. -->
-但是如果我们想要将一个可变对象从一个参与者传递给另一个参与者呢?为此，我们需要确保正在_sending_可变对象的actor也_give up_从该对象读写的权能。
+但是如果我们想要将一个可变对象从一个actor`传递`给另一个actor呢?为此，我们需要确保正在`发送（sending）`可变对象的actor也`give up`从该对象读写的权能。
 
 <!-- This is exactly what `iso` does. It is _read and write unique_, there can only be one reference at a time that can be used for reading or writing. If you send an `iso` object to another actor, you will be giving up the ability to read from or write to that object. -->
 这正是`iso`所做的。它是读写唯一的，一次只能有一个可用于读写的引用。如果您将一个`iso`对象发送给另一个参与者，您将放弃从该对象读写的权能。
@@ -28,7 +28,7 @@ toc: true
 ## Sharing
 
 <!-- If you want to __share__ an object amongst actors, then we have to make one of the following guarantees: -->
-如果你想在参与者之间共享一个对象，那么我们必须做出如下保证:
+如果你想在参与者之间共享一个对象，那么我们必须遵守如下约束:
 
 <!-- 1. Either _no_ actor can write to the object, in which case _any_ actor can read from it, or -->
 <!-- 2. Only _one_ actor can write to the object, in which case _other_ actors can neither read from or write to the object. -->
@@ -36,7 +36,7 @@ toc: true
 2. 只有_one_ actor可以对对象进行写操作，在这种情况下_other_ actor既不能对对象进行读操作，也不能对对象进行写操作。
 
 <!-- The first guarantee is exactly what `val` does. It is _globally immutable_, so we know that _no_ actor can ever write to that object. As a result, you can freely send `val` objects to other actors, without needing to give up the ability to read from that object. -->
-第一个保证就是val所做的。它是全局的immutable_，所以我们知道_no_actor可以写那个对象。因此，您可以自由地将`val`对象发送给其他参与者，而不需要放弃从该对象读取数据的权能。
+第一个约束就是val所做的。它具有`全局不可变性`，所以我们知道没有actor可以修改那个对象。因此，您可以自由地将`val`对象发送给其他参与者，而不需要放弃从该对象读取数据的权能。
 
 <!-- __So I should use `val` when I want to share an immutable object amongst actors?__ Yes! If you don't need to share it, you can just use `ref` instead, or `box` if you want it to be immutable. -->
 那么当我想要在参与者之间共享一个不可变的对象时，我应该使用`val`吗?__是的!如果你不需要共享它，你可以使用`ref`代替，或`box`如果你想它是不可变的。
@@ -54,7 +54,7 @@ toc: true
 ## 无法发送的引用权能
 
 <!-- You may have noticed we didn't mention `trn`, `ref`, or `box` as things you can send to other actors. That's because you can't do it. They don't make the guarantees we need in order to be safe. -->
-你可能已经注意到我们并没有提到`trn`，`ref`，或者`box`作为你可以发送给其他演员的东西。那是因为你做不到。他们不会为了安全而做出我们需要的保证。
+你可能已经注意到我们并没有提到`trn`，`ref`，或者`box`作为你可以发送给其他actor的东西。那是因为你做不到。他们不会为了安全而做出我们需要的约束。
 
 <!-- So when should you use those reference capabilities? -->
 那么什么时候应该使用这些引用权能呢?

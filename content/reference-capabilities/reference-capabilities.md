@@ -88,7 +88,7 @@ __好吧，看来同时安全地共享数据确实很棘手，来看看`引用�
 如果你使用过C/C++，您可能熟悉`const`，它是一个 _类型限定符（type qualifier）_ ，告诉编译器不允许程序员修改某些东西。
 
 A reference capability is a form of _type qualifier_ and provides a lot more guarantees than `const` does!
-`引用权能（reference capabilities）`是 _type qualifier_ 的一种形式，它提供了比`const`多得多的保证!
+`引用权能（reference capabilities）`是 _type qualifier_ 的一种形式，它提供了比`const`更多的约束!
 
 <!-- In Pony, every use of a type has a reference capability. These capabilities apply to variables, rather than to the type as a whole. In other words, when you define a class `Wombat`, you don't pick a reference capability for all instances of the class. Instead, `Wombat` variables each have their own reference capability. -->
 在Pony中，所有的类型都有一个`引用权能（reference capabilities）`作为类型限定符。这个规则只适用于变量（局部变量、字段、参数等），而不是类型。换句话说，当你定义一个类`Wombat`时，你不会为这个类的所有实例使用某个`引用权能（reference capabilities）`。相反，`Wombat`的每个字段都有自己的`引用权能（reference capabilities）`。

@@ -1,5 +1,5 @@
 ---
-title: "别名（Aliasing）"
+title: "别名引用（Aliasing）"
 section: "引用权能（Reference Capabilities）"
 menu:
   toc:
@@ -9,19 +9,19 @@ toc: true
 ---
 
 <!-- __Aliasing__ means having more than one reference to the same object, within the same actor. This can be the case for a variable or a field. -->
-__别名（Aliasing）__意味着在同一行为人内对同一对象有多个引用。这可以是变量或字段的情况。
+__别名引用（Aliasing）__ 是指在一个actor内部对同一对象会有多个引用。可能是变量，也可能是字段。
 
 <!-- In most programming languages, aliasing is pretty simple. You just assign some variable to another variable, and there you go, you have an alias. The variable you assign to has the same type (or some supertype) as what's being assigned to it, and everything is fine. -->
-在大多数编程语言中，别名非常简单。你只需要把一个变量赋值给另一个变量，就得到了一个别名。赋值给的变量与赋值给它的变量具有相同的类型(或某些超类型)，一切正常。
+在其他编程语言中，别名引用很常见。只需要把一个变量赋值给另一个变量，就得到了一个别名。只要被赋值的变量与原始变量具有相同的类型(或某些超类型)，操作就没问题。
 
 <!-- In Pony, that works for some reference capabilities, but not all. -->
-在Pony中，这适用于一些引用权能，但不是全部。
+在Pony中，这种操作只适用于一些引用权能，不是所有引用权能都支持这么做。
 
 <!-- ## Aliasing and deny guarantees -->
-## 别名和拒绝保证（Aliasing and deny guarantees）
+## 别名引用和引用约束（Aliasing and deny guarantees）
 
 <!-- The reason for this is that the `iso` reference capability denies other `iso` variables that point to the same object. That is, you can only have one `iso` variable pointing to any given object. The same goes for `trn`. -->
-这样做的原因是`iso`引用权能拒绝了指向相同对象的其他`iso`变量。也就是说，你只能有一个`iso`变量指向任何给定的对象。trn也是一样。
+下面示例引用操作被编译器阻止的原因是`iso`引用权能的读写唯一性约束，拒绝了其他`iso`变量引用自身数据。也就是说，只能有一个`iso`变量指向任何给定的对象数据。`trn`也是一样。
 
 ```pony
 fun test(a: Wombat iso) =>
@@ -29,7 +29,7 @@ fun test(a: Wombat iso) =>
 ```
 
 <!-- Here we have some function that gets passed an isolated Wombat. If we try to alias `a` by assigning it to `b`, we'll be breaking reference capability guarantees so the compiler will stop us. -->
-这里我们有一些函数传递给一个孤立的袋熊。如果我们试图通过将`a`赋值给`b`来别名`a`，我们将破坏引用权能保证，因此编译器将阻止我们。
+这里我们有一些函数传递给一个`iso`权能类型的Wombat对象。为`a`创建一个`b`的别名，将破坏引用权能约束，因此编译器将阻止我们。
 
 <!-- __What can I alias an `iso` as?__ Since an `iso` says no other variable can be used by _any_ actor to read from or write to that object, we can only create aliases to an `iso` that can neither read nor write. Fortunately, we've got a reference capability that does exactly that: `tag`. So we can do this and the compiler will be happy: -->
 我可以将`iso`别名为什么?由于`iso`表示任何其他变量都不能被_any_ actor用来读写该对象，所以我们只能为既不能读也不能写的`iso`创建别名。幸运的是，我们有一个引用权能:' tag '。所以我们可以这样做，编译器会很高兴:
@@ -40,7 +40,7 @@ fun test(a: Wombat iso) =>
 ```
 
 <!-- __What about aliasing `trn`?__ Since a `trn` says no other variable can be used by _any_ actor to write to that object, we need something that doesn't allow writing but also doesn't prevent our `trn` variable from writing. Fortunately, we've got a reference capability that does that too: `box`. So we can do this and the compiler will be happy: -->
-那混叠`trn`呢?因为‘trn’表示任何其他变量都不能被_any_ actor用来写入该对象，所以我们需要一些不允许写入但也不阻止‘trn’变量写入的东西。幸运的是，我们还有一个引用权能可以做到这一点:`box`。所以我们可以这样做，编译器会很高兴:
+那混叠`trn`呢?因为`trn`表示任何其他变量都不能被`任何actor`用来写入该对象，所以我们需要一些不允许写入但也不阻止`trn`变量写入的东西。幸运的是，我们还有一个引用权能可以做到这一点:`box`。所以我们可以这样做，编译器会很高兴:
 
 ```pony
 fun test(a: Wombat trn) =>
@@ -48,7 +48,7 @@ fun test(a: Wombat trn) =>
 ```
 
 <!-- __What about aliasing other stuff?__ For both `iso` and `trn`, the guarantees require that aliases must give up on some ability (reading and writing for `iso`, writing for `trn`). For the other capabilities (`ref`, `val`, `box` and `tag`), aliases allow for the same operations, so such a reference can just be aliased as itself. -->
-那混叠其他东西呢?对于`iso`和`trn`，保证要求别名必须放弃某些权能(`iso`的读和写，`trn`的写)。对于其他功能(' ref '、' val '、' box '和' tag ')，别名允许相同的操作，所以这样的引用可以作为它自己的别名。
+那混叠其他东西呢?对于`iso`和`trn`，引用权能机制`约束`别名必须放弃某些权能(`iso`的读和写，`trn`的写)。对于其他功能(' ref '、' val '、' box '和' tag ')，别名允许相同的操作，所以这样的引用可以作为它自己的别名。
 
 <!-- ## What counts as making an alias? -->
 ## 什么算假名?（What counts as making an alias?）

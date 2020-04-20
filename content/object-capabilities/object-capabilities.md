@@ -24,7 +24,7 @@ Pony的类型安装系统是构建在[对象权能模型](https://everything.exp
 由于Pony没有指针算法，并且是类型安全的，内存安全的，对象引用不能被程序“发明”(即伪造)。您只能通过构造一个对象或传递一个对象来获得一个。
 
 <!-- __What about the C FFI?__ Using the C FFI can break this guarantee. We'll talk about the __C FFI trust boundary__ later, and how to control it. -->
-__那么C FFI呢?__ 使用信用证可以打破这一保证。稍后我们将讨论如何控制边界。
+__那么C FFI呢?__ 使用C FFI可以打破这一约束限制。稍后我们将讨论 __C FFI trust boundary__ 。
 
 <!-- ## What about global variables? -->
 ## 那么全局变量呢?
@@ -33,7 +33,7 @@ __那么C FFI呢?__ 使用信用证可以打破这一保证。稍后我们将讨
 他们是坏的!因为您可以在不构造它们或不传递它们的情况下获得它们。
 
 <!-- Global variables are a form of what is called _ambient authority_. Another form of ambient authority is unfettered access to the file system. -->
-全局变量是所谓的_ambient authority_的一种形式。环境权限的另一种形式是不受约束地访问文件系统。
+全局变量是所谓的 _ambient authority_ 的一种形式。环境权限的另一种形式是不受约束地访问文件系统。
 
 <!-- Pony has no global variables and no global functions. That doesn't mean all ambient authority is magically gone - we still need to be careful about the file system, for example. Having no globals is necessary, but not sufficient, to eliminate ambient authority. -->
 Pony没有全局变量，也没有全局函数。这并不意味着所有的环境权限都神奇地消失了——例如，我们仍然需要注意文件系统。没有全局权限对于消除环境权限是必要的，但还不够。

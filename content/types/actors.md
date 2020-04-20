@@ -107,4 +107,4 @@ actor Main
 ## Actor finalisers
 
 <!-- Like classes, actors can have finalisers. The finaliser definition is the same (`fun _final()`). All guarantees and restrictions for a class finaliser are also valid for an actor finaliser. In addition, an actor will not receive any further message after its finaliser is called. -->
-和类一样，actor也有销毁函数。销毁函数的定义也是（`fun _final（）`）。类的销毁函数的所有保证和限制也对actor有效。另外，actor的销毁函数被调用后，就不会再收到任何消息。
+和类一样，actor也有销毁函数。销毁函数的定义也是（`fun _final（）`）。类的销毁函数的所有约束和限制也对actor有效。另外，actor的销毁函数被调用后，就不会再收到任何消息。
