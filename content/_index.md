@@ -14,7 +14,7 @@ toc: true
 ## Pony语言简介
 
 <!-- Pony is an object-oriented, actor-model, capabilities-secure programming language. It's __object-oriented__ because it has classes and objects, like Python, Java, C++, and many other languages. It's __actor-model__ because it has _actors_ (similar to Erlang, Elixir, or Akka). These behave like objects, but they can also execute code _asynchronously_. Actors make Pony awesome. -->
-Pony是一个 多范式编程语言，它融合了`面向对象`和`函数式编程`，Pony非常注重`性能`和`安全性`,此外还提供了`Actor模型`。Pony拥有类似于Python、Java、C++等语言的`面向对象`特性。内置的`Actor模型`（类似于Erlang、Elixir和Akka），actor看起来就像是像是一个类，但是它以`异步`方式执行。
+Pony是一个`面向对象`（类似于Python、Java、C++等语言的`面向对象`特性）的编程语言，非常注重`性能`和`安全性`。原生提供强大的`Actor模型`（类似于Erlang、Elixir和Akka）解决并发问题。<!-- Actor让Pony拥有强大的表现力。 -->
 
 <!-- When we say Pony is __capabilities-secure__, we mean a few things: -->
 Pony强调的`安全性`,表现在这几个方面：
